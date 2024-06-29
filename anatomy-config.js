@@ -2,7 +2,7 @@ var basic_config = {
     "basic_1":{//head
         "hover": "HEAD",//info of the popup
         "url": "https://www.humananatomyillustrations.com/",//link to any webpage
-        "target": "_self",// use "_blank", "_self", or "none"
+        "target": "none",// use "_blank", "_self", or "none"
         "active": true//true/false to show/hide
     },
     "basic_2":{//neck
