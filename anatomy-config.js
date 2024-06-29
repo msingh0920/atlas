@@ -1,6 +1,6 @@
 var basic_config = {
     "basic_1":{//head
-        "hover": "HEAD",//info of the popup
+        "hover": "HEAD",//NAD+: Brain clarity, increased energy/stamina
         "url": "https://www.humananatomyillustrations.com/",//link to any webpage
         "target": "none",// use "_blank", "_self", or "none"
         "active": true//true/false to show/hide
