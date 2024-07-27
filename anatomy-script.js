@@ -18,7 +18,7 @@
         var _obj = $('#' + id);
         $('#basic-wrapper').css({'opacity': '1'});
 
-        _obj.attr({'fill': 'rgba(255, 0, 0, 0)', 'stroke': 'rgba(255, 102, 102, 1)'});
+        _obj.attr({'fill': 'rgba(106, 20, 109, 0)', 'stroke': 'rgba(255, 102, 102, 1)'});
         _obj.attr({'cursor': 'default'});
 
         if (basic_config[id]['active'] === true) {
@@ -38,13 +38,13 @@
                             y = (y + basicanatomytiph > $(document).scrollTop() + $(window).height()) ? $(document).scrollTop() + $(window).height() - basicanatomytiph - 10 : y
 
                             if (basic_config[id]['target'] !== 'none') {
-                                _obj.css({'fill': 'rgba(255, 0, 0, 0.7)'});
+                                _obj.css({'fill': 'rgba(106, 20, 109, 0.7)'});
                             }
                             $basicatip.show().html(basic_config[id]['hover']);
                             $basicatip.css({left: x, top: y})
                         })
                         _obj.on('touchend', function () {
-                            _obj.css({'fill': 'rgba(255, 0, 0, 0)'});
+                            _obj.css({'fill': 'rgba(106, 20, 109, 0)'});
                             if (basic_config[id]['target'] === '_blank') {
                                 window.open(basic_config[id]['url']);
                             } else if (basic_config[id]['target'] === '_self') {
