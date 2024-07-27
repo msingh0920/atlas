@@ -6,7 +6,7 @@ var basic_config = {
         "active": true//true/false to show/hide
     },
     "basic_2":{//neck
-        "hover": "NECK",
+        "hover": "NECKMUSCLES",
         "url": "https://www.humananatomyillustrations.com/", "target": "_self",
         "active": true
     },
