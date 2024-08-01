@@ -11,7 +11,7 @@ var basic_config = {
         "active": true
     },
     "basic_3":{//chest
-        "hover": "CHEST",
+        "hover": "CHESTMUSC",
         "url": "https://www.humananatomyillustrations.com/", "target": "_self",
         "active": true
     },
