@@ -1,0 +1,18 @@
+{
+  "zenoti": {
+    "api_base_url": "https://api.zenoti.com/v1",
+    "api_key": "YOUR_ZENOTI_API_KEY",
+    "center_ids": {
+      "east_meadow": "YOUR_EAST_MEADOW_CENTER_ID",
+      "midtown": "YOUR_MIDTOWN_CENTER_ID"
+    }
+  },
+  "monday": {
+    "api_key": "YOUR_MONDAY_API_KEY",
+    "board_id": null
+  },
+  "schedule": {
+    "run_daily_at": "07:00",
+    "timezone": "America/New_York"
+  }
+}
