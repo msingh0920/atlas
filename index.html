@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atlas — Mission Control</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
+<style>
+  :root {
+    --bg: #0a0e14;
+    --panel: #11161f;
+    --panel-2: #161d29;
+    --border: #1f2937;
+    --text: #e5eaf2;
+    --muted: #8b96a8;
+    --accent: #4cc2ff;
+    --accent-dim: #1a3a4d;
+    --green: #4ade80;
+    --amber: #fbbf24;
+    --red: #f87171;
+    --radius: 14px;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    --mono: "SF Mono", "Cascadia Code", Consolas, monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    min-height: 100vh;
+    background-image: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(76,194,255,0.08), transparent);
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 20px 60px; }
+
+  /* Header */
+  header {
+    display: flex; align-items: baseline; justify-content: space-between;
+    flex-wrap: wrap; gap: 8px; margin-bottom: 28px;
+  }
+  .greeting h1 { font-size: 1.9rem; font-weight: 650; letter-spacing: -0.02em; }
+  .greeting h1 .accent { color: var(--accent); }
+  .greeting p { color: var(--muted); margin-top: 4px; font-size: 0.95rem; }
+  .clock { text-align: right; }
+  .clock .time { font-family: var(--mono); font-size: 2.1rem; font-weight: 500; letter-spacing: 0.02em; }
+  .clock .date { color: var(--muted); font-size: 0.9rem; margin-top: 2px; }
+
+  /* Grid */
+  .grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 18px; }
+  @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+  .col { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+  }
+  .panel h2 {
+    font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--muted); font-weight: 600; margin-bottom: 14px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .panel h2 .count { color: var(--accent); font-family: var(--mono); }
+
+  /* Briefing */
+  .briefing-body { font-size: 0.95rem; line-height: 1.65; color: var(--text); white-space: pre-wrap; }
+  .briefing-body:empty::before, .briefing-empty {
+    content: "";
+  }
+  .briefing-placeholder { color: var(--muted); font-size: 0.92rem; line-height: 1.6; }
+  .briefing-placeholder code {
+    font-family: var(--mono); font-size: 0.85em; background: var(--panel-2);
+    padding: 2px 6px; border-radius: 5px; border: 1px solid var(--border);
+  }
+  .briefing-actions { margin-top: 12px; display: flex; gap: 8px; }
+
+  /* Tasks */
+  .task-input-row { display: flex; gap: 8px; margin-bottom: 12px; }
+  input[type="text"], textarea {
+    background: var(--panel-2); border: 1px solid var(--border); color: var(--text);
+    border-radius: 9px; padding: 9px 12px; font-size: 0.92rem; font-family: var(--font);
+    flex: 1; outline: none; transition: border-color 0.15s;
+  }
+  input[type="text"]:focus, textarea:focus { border-color: var(--accent); }
+  button {
+    background: var(--accent-dim); color: var(--accent); border: 1px solid rgba(76,194,255,0.3);
+    border-radius: 9px; padding: 9px 14px; font-size: 0.88rem; font-weight: 600;
+    cursor: pointer; transition: background 0.15s; font-family: var(--font); white-space: nowrap;
+  }
+  button:hover { background: rgba(76,194,255,0.22); }
+  button.ghost { background: transparent; border-color: var(--border); color: var(--muted); }
+  button.ghost:hover { color: var(--text); border-color: var(--muted); }
+
+  ul.tasks { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  ul.tasks li {
+    display: flex; align-items: center; gap: 10px; padding: 9px 12px;
+    background: var(--panel-2); border: 1px solid var(--border); border-radius: 9px;
+    font-size: 0.93rem;
+  }
+  ul.tasks li .box {
+    width: 18px; height: 18px; border-radius: 6px; border: 1.5px solid var(--muted);
+    cursor: pointer; flex-shrink: 0; display: grid; place-items: center;
+    font-size: 12px; color: var(--bg); transition: all 0.15s;
+  }
+  ul.tasks li.done .box { background: var(--green); border-color: var(--green); }
+  ul.tasks li.done .label { text-decoration: line-through; color: var(--muted); }
+  ul.tasks li .label { flex: 1; word-break: break-word; }
+  ul.tasks li .del {
+    color: var(--muted); cursor: pointer; font-size: 1.1rem; line-height: 1;
+    opacity: 0; transition: opacity 0.15s; background: none; border: none; padding: 2px 4px;
+  }
+  ul.tasks li:hover .del { opacity: 0.7; }
+  ul.tasks li .del:hover { color: var(--red); opacity: 1; }
+  .empty { color: var(--muted); font-size: 0.9rem; padding: 6px 2px; }
+
+  /* Notes */
+  textarea#notes { width: 100%; min-height: 130px; resize: vertical; line-height: 1.55; }
+  .saved-flash { color: var(--green); font-size: 0.78rem; margin-left: 8px; opacity: 0; transition: opacity 0.3s; }
+  .saved-flash.show { opacity: 1; }
+
+  /* Apps */
+  .apps { display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 10px; }
+  .app {
+    display: flex; flex-direction: column; align-items: center; gap: 7px;
+    background: var(--panel-2); border: 1px solid var(--border); border-radius: 12px;
+    padding: 14px 8px 12px; text-decoration: none; color: var(--text);
+    font-size: 0.8rem; transition: transform 0.12s, border-color 0.12s;
+    position: relative;
+  }
+  .app:hover { transform: translateY(-2px); border-color: var(--accent); }
+  .app .icon { font-size: 1.6rem; }
+  .app .rm {
+    position: absolute; top: 4px; right: 7px; color: var(--muted); font-size: 0.85rem;
+    opacity: 0; cursor: pointer; background: none; border: none; padding: 2px;
+  }
+  .app:hover .rm { opacity: 0.6; }
+  .app .rm:hover { color: var(--red); opacity: 1; }
+  .add-app-form { display: none; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  .add-app-form.open { display: flex; }
+  .add-app-form input { min-width: 120px; }
+
+  /* Status strip */
+  .status {
+    display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px;
+    font-size: 0.82rem; color: var(--muted);
+  }
+  .status .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--green); margin-right: 6px; }
+  .status span { display: flex; align-items: center; }
+
+  footer { margin-top: 34px; text-align: center; color: var(--muted); font-size: 0.8rem; }
+  footer code { font-family: var(--mono); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="greeting">
+      <h1><span id="greet">Hello</span>. <span class="accent">Atlas</span> online.</h1>
+      <p>Your personal mission control — tasks, notes, briefings, and every app in one place.</p>
+    </div>
+    <div class="clock">
+      <div class="time" id="time">--:--</div>
+      <div class="date" id="date"></div>
+    </div>
+  </header>
+
+  <div class="status">
+    <span><span class="dot"></span>All systems nominal</span>
+    <span id="task-stat"></span>
+    <span id="focus-stat"></span>
+  </div>
+
+  <div class="grid">
+    <div class="col">
+      <section class="panel">
+        <h2>Daily Briefing</h2>
+        <div class="briefing-body" id="briefing"></div>
+        <div class="briefing-placeholder" id="briefing-placeholder">
+          No briefing loaded yet. Ask Claude (your Atlas brain) to run <code>/briefing</code> —
+          it will sweep Slack, Google Drive, GitHub, and monday.com, then paste the summary here.
+        </div>
+        <div class="briefing-actions">
+          <button id="paste-briefing">Paste briefing</button>
+          <button class="ghost" id="clear-briefing">Clear</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Today's Tasks <span class="count" id="task-count"></span></h2>
+        <div class="task-input-row">
+          <input type="text" id="task-input" placeholder="Add a task… (Enter)" autocomplete="off">
+          <button id="task-add">Add</button>
+        </div>
+        <ul class="tasks" id="task-list"></ul>
+      </section>
+    </div>
+
+    <div class="col">
+      <section class="panel">
+        <h2>Connected Apps</h2>
+        <div class="apps" id="apps"></div>
+        <div class="add-app-form" id="add-app-form">
+          <input type="text" id="app-name" placeholder="Name">
+          <input type="text" id="app-url" placeholder="https://…">
+          <input type="text" id="app-icon" placeholder="Emoji" size="4" style="flex:0 0 70px">
+          <button id="app-save">Save</button>
+        </div>
+        <div style="margin-top:12px">
+          <button class="ghost" id="app-add-toggle">+ Add app</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Quick Capture <span class="saved-flash" id="notes-saved">saved</span></h2>
+        <textarea id="notes" placeholder="Brain dump anything — it autosaves locally."></textarea>
+      </section>
+    </div>
+  </div>
+
+  <footer>
+    Atlas · local-first (your data lives in this browser) · brain powered by Claude via <code>AtlasClaude</code>
+  </footer>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const store = {
+  get(k, fallback) { try { const v = localStorage.getItem('atlas:' + k); return v === null ? fallback : JSON.parse(v); } catch { return fallback; } },
+  set(k, v) { localStorage.setItem('atlas:' + k, JSON.stringify(v)); }
+};
+
+/* Clock + greeting */
+function tick() {
+  const now = new Date();
+  $('time').textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  $('date').textContent = now.toLocaleDateString([], { weekday: 'long', month: 'long', day: 'numeric' });
+  const h = now.getHours();
+  $('greet').textContent = h < 5 ? 'Burning the midnight oil' : h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : 'Good evening';
+}
+tick(); setInterval(tick, 10000);
+
+/* Tasks */
+let tasks = store.get('tasks', []);
+function renderTasks() {
+  const list = $('task-list');
+  list.innerHTML = '';
+  if (!tasks.length) list.innerHTML = '<div class="empty">Nothing queued. Add your first task above.</div>';
+  tasks.forEach((t, i) => {
+    const li = document.createElement('li');
+    if (t.done) li.classList.add('done');
+    const box = document.createElement('span');
+    box.className = 'box'; box.textContent = t.done ? '✓' : '';
+    box.onclick = () => { t.done = !t.done; save(); };
+    const label = document.createElement('span');
+    label.className = 'label'; label.textContent = t.text;
+    const del = document.createElement('button');
+    del.className = 'del'; del.textContent = '×'; del.title = 'Delete';
+    del.onclick = () => { tasks.splice(i, 1); save(); };
+    li.append(box, label, del);
+    list.appendChild(li);
+  });
+  const open = tasks.filter(t => !t.done).length;
+  $('task-count').textContent = tasks.length ? `${tasks.length - open}/${tasks.length}` : '';
+  $('task-stat').textContent = tasks.length ? `${open} task${open === 1 ? '' : 's'} open` : 'No open tasks';
+  const doneToday = tasks.filter(t => t.done).length;
+  $('focus-stat').textContent = doneToday ? `${doneToday} completed — keep going` : '';
+}
+function save() { store.set('tasks', tasks); renderTasks(); }
+function addTask() {
+  const v = $('task-input').value.trim();
+  if (!v) return;
+  tasks.push({ text: v, done: false });
+  $('task-input').value = '';
+  save();
+}
+$('task-add').onclick = addTask;
+$('task-input').addEventListener('keydown', e => { if (e.key === 'Enter') addTask(); });
+renderTasks();
+
+/* Notes */
+$('notes').value = store.get('notes', '');
+let noteTimer;
+$('notes').addEventListener('input', () => {
+  clearTimeout(noteTimer);
+  noteTimer = setTimeout(() => {
+    store.set('notes', $('notes').value);
+    $('notes-saved').classList.add('show');
+    setTimeout(() => $('notes-saved').classList.remove('show'), 1200);
+  }, 400);
+});
+
+/* Briefing */
+function renderBriefing() {
+  const b = store.get('briefing', '');
+  $('briefing').textContent = b;
+  $('briefing-placeholder').style.display = b ? 'none' : 'block';
+}
+$('paste-briefing').onclick = async () => {
+  let text = '';
+  try { text = await navigator.clipboard.readText(); } catch {}
+  if (!text) text = prompt('Paste your briefing:') || '';
+  if (text.trim()) { store.set('briefing', text.trim()); renderBriefing(); }
+};
+$('clear-briefing').onclick = () => { store.set('briefing', ''); renderBriefing(); };
+renderBriefing();
+
+/* Apps */
+const DEFAULT_APPS = [
+  { name: 'Gmail', url: 'https://mail.google.com', icon: '✉️' },
+  { name: 'Calendar', url: 'https://calendar.google.com', icon: '📅' },
+  { name: 'Drive', url: 'https://drive.google.com', icon: '📁' },
+  { name: 'Slack', url: 'https://slack.com', icon: '💬' },
+  { name: 'GitHub', url: 'https://github.com', icon: '🐙' },
+  { name: 'monday', url: 'https://monday.com', icon: '📋' },
+  { name: 'Figma', url: 'https://figma.com', icon: '🎨' },
+  { name: 'Canva', url: 'https://canva.com', icon: '🖼️' },
+  { name: 'Netlify', url: 'https://app.netlify.com', icon: '🚀' },
+  { name: 'Claude', url: 'https://claude.ai', icon: '🧠' },
+];
+let apps = store.get('apps', DEFAULT_APPS);
+function renderApps() {
+  const grid = $('apps');
+  grid.innerHTML = '';
+  apps.forEach((a, i) => {
+    const el = document.createElement('a');
+    el.className = 'app'; el.href = a.url; el.target = '_blank'; el.rel = 'noopener';
+    const icon = document.createElement('span'); icon.className = 'icon'; icon.textContent = a.icon || '🔗';
+    const name = document.createElement('span'); name.textContent = a.name;
+    const rm = document.createElement('button');
+    rm.className = 'rm'; rm.textContent = '×'; rm.title = 'Remove';
+    rm.onclick = e => { e.preventDefault(); apps.splice(i, 1); store.set('apps', apps); renderApps(); };
+    el.append(rm, icon, name);
+    grid.appendChild(el);
+  });
+}
+$('app-add-toggle').onclick = () => $('add-app-form').classList.toggle('open');
+$('app-save').onclick = () => {
+  const name = $('app-name').value.trim(), url = $('app-url').value.trim();
+  if (!name || !url) return;
+  apps.push({ name, url: url.startsWith('http') ? url : 'https://' + url, icon: $('app-icon').value.trim() || '🔗' });
+  store.set('apps', apps);
+  $('app-name').value = $('app-url').value = $('app-icon').value = '';
+  $('add-app-form').classList.remove('open');
+  renderApps();
+};
+renderApps();
+</script>
+</body>
+</html>
