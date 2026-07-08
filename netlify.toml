@@ -1,0 +1,9 @@
+# Static site, no build step. The edge function in netlify/edge-functions/gate.ts
+# password-protects every path (fails closed until GATE_PASSWORD is set on the site).
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
