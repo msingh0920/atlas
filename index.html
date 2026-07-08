@@ -225,8 +225,9 @@
 <script>
 const $ = id => document.getElementById(id);
 const store = {
-  get(k, fallback) { try { const v = localStorage.getItem('atlas:' + k); return v === null ? fallback : JSON.parse(v); } catch { return fallback; } },
-  set(k, v) { localStorage.setItem('atlas:' + k, JSON.stringify(v)); }
+  mem: {},
+  get(k, fallback) { try { const v = localStorage.getItem('atlas:' + k); return v === null ? (k in this.mem ? this.mem[k] : fallback) : JSON.parse(v); } catch { return k in this.mem ? this.mem[k] : fallback; } },
+  set(k, v) { this.mem[k] = v; try { localStorage.setItem('atlas:' + k, JSON.stringify(v)); } catch {} }
 };
 
 /* Clock + greeting */
