@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atlas — Financial Command</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
+<style>
+  :root {
+    --bg: #0a0e14;
+    --panel: #11161f;
+    --panel-2: #161d29;
+    --border: #1f2937;
+    --text: #e5eaf2;
+    --muted: #8b96a8;
+    --accent: #4cc2ff;
+    --accent-dim: #1a3a4d;
+    --green: #4ade80;
+    --amber: #fbbf24;
+    --red: #f87171;
+    --s1: #3987e5;  /* Atlas Men's Health */
+    --s2: #199e70;  /* Atlas Wellness Group */
+    --s3: #c98500;  /* Square rail */
+    --radius: 14px;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    --mono: "SF Mono", "Cascadia Code", Consolas, monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text); font-family: var(--font); min-height: 100vh;
+    background-image: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(76,194,255,0.08), transparent);
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 20px 60px; }
+
+  header { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+  .greeting h1 { font-size: 1.9rem; font-weight: 650; letter-spacing: -0.02em; }
+  .greeting h1 .accent { color: var(--accent); }
+  .greeting p { color: var(--muted); margin-top: 4px; font-size: 0.95rem; }
+  .backlink { color: var(--accent); text-decoration: none; font-size: 0.9rem; }
+  .backlink:hover { text-decoration: underline; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 24px; }
+  .chip { display: inline-flex; align-items: center; gap: 7px; font-size: 0.78rem; font-weight: 600;
+    padding: 4px 11px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); background: var(--panel); }
+  .chip .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); }
+  .chip.ok { color: var(--green); border-color: rgba(74,222,128,0.25); }
+  .chip.ok .dot { background: var(--green); }
+  .chip.down { color: var(--red); border-color: rgba(248,113,113,0.3); }
+  .chip.down .dot { background: var(--red); }
+
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; margin-bottom: 18px; }
+  .grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 18px; margin-bottom: 18px; }
+  @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+
+  .panel { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; min-width: 0; }
+  .panel h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-weight: 600; margin-bottom: 14px; }
+
+  .big { font-family: var(--mono); font-size: 1.75rem; font-weight: 600; letter-spacing: -0.01em; }
+  .big.red { color: var(--red); }
+  .delta { color: var(--green); font-size: 0.85rem; font-weight: 700; font-family: var(--font); }
+  .delta.neg { color: var(--red); }
+  .sub { color: var(--muted); font-size: 0.8rem; margin-top: 6px; line-height: 1.45; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 8px; font-size: 0.78rem; color: var(--muted); }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .sw { width: 10px; height: 10px; border-radius: 3px; }
+  .chart-scroll { overflow-x: auto; }
+  #trend { display: block; width: 100%; height: auto; }
+  .tooltip { position: fixed; z-index: 10; pointer-events: none; display: none; background: var(--panel-2);
+    border: 1px solid var(--border); border-radius: 10px; padding: 9px 12px; font-size: 0.8rem; min-width: 165px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4); }
+  .tooltip .t-title { font-weight: 700; margin-bottom: 5px; }
+  .tooltip .row { display: flex; justify-content: space-between; gap: 14px; color: var(--muted); }
+  .tooltip .row b { color: var(--text); font-family: var(--mono); font-weight: 500; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  th { text-align: left; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--muted); padding: 5px 8px 7px 0; border-bottom: 1px solid var(--border); }
+  td { padding: 8px 8px 8px 0; border-bottom: 1px solid var(--border); color: var(--muted); }
+  tr:last-child td { border-bottom: none; }
+  td.num, th.num { text-align: right; font-family: var(--mono); font-size: 0.82rem; }
+  td.name { color: var(--text); font-weight: 550; }
+  .tag { font-size: 0.68rem; font-weight: 700; padding: 1px 7px; border-radius: 999px; white-space: nowrap; }
+  .tag.plan { background: rgba(74,222,128,0.12); color: var(--green); }
+  .tag.review { background: rgba(251,191,36,0.12); color: var(--amber); }
+
+  .attn { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .attn li { display: grid; grid-template-columns: auto 1fr; gap: 12px; padding: 11px 13px; border-radius: 10px;
+    background: var(--panel-2); border: 1px solid var(--border); }
+  .attn .sev { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.06em; padding-top: 2px; white-space: nowrap; }
+  .attn li.crit { border-left: 3px solid var(--red); } .attn li.crit .sev { color: var(--red); }
+  .attn li.warn { border-left: 3px solid var(--amber); } .attn li.warn .sev { color: var(--amber); }
+  .attn li.info { border-left: 3px solid var(--border); } .attn li.info .sev { color: var(--muted); }
+  .attn .what { font-weight: 600; font-size: 0.88rem; }
+  .attn .how { color: var(--muted); font-size: 0.8rem; margin-top: 3px; line-height: 1.45; }
+
+  .rev-row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border); }
+  .rev-row:last-of-type { border-bottom: none; }
+  .stars { color: var(--amber); font-weight: 700; font-family: var(--mono); }
+  .footer-note { color: var(--muted); font-size: 0.78rem; margin-top: 24px; line-height: 1.6; opacity: 0.85; }
+  .stale { display: none; margin-bottom: 18px; padding: 10px 14px; border-radius: 10px; border: 1px solid rgba(251,191,36,0.3);
+    color: var(--amber); font-size: 0.85rem; background: rgba(251,191,36,0.07); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="greeting">
+      <h1>Financial <span class="accent">Command</span></h1>
+      <p id="asof">Loading snapshot…</p>
+    </div>
+    <a class="backlink" href="index.html">← Mission Control</a>
+  </header>
+
+  <div class="stale" id="stale"></div>
+  <div class="chips" id="chips"></div>
+  <div class="tiles" id="tiles"></div>
+
+  <div class="grid">
+    <div class="panel">
+      <h2>Cash collected by month</h2>
+      <div class="legend">
+        <span><span class="sw" style="background:var(--s1)"></span>Atlas Men's Health</span>
+        <span><span class="sw" style="background:var(--s2)"></span>Atlas Wellness Group</span>
+        <span><span class="sw" style="background:var(--s3)"></span>Square rail</span>
+      </div>
+      <div class="chart-scroll"><svg id="trend" viewBox="0 0 640 260" role="img" aria-label="Monthly cash collected, stacked by rail"></svg></div>
+      <div class="sub">Cash basis. Zenoti excludes redemptions &amp; Square tender; Square from its own rail. Current month is partial.</div>
+    </div>
+    <div class="panel">
+      <h2>Memberships — active (paid ≤35 days)</h2>
+      <table id="members"></table>
+      <div class="sub" id="memnote"></div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="panel"><h2>Needs attention</h2><ul class="attn" id="attn"></ul></div>
+    <div class="panel"><h2>Reputation &amp; last full month</h2><div id="reviews"></div><table id="lastmonth" style="margin-top:12px"></table></div>
+  </div>
+
+  <p class="footer-note" id="basis"></p>
+</div>
+<div class="tooltip" id="tip"></div>
+
+<script src="data/finance.js"></script>
+<script>
+(function () {
+  var D = window.FINANCE;
+  var $ = function (id) { return document.getElementById(id); };
+  if (!D) { $('asof').textContent = 'No snapshot found — run: node warehouse/finance_snapshot.mjs in AtlasClaude, then copy to data/finance.js'; return; }
+
+  var fmt = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
+  var fmtK = function (n) { return '$' + Math.round(n / 1000) + 'K'; };
+
+  $('asof').textContent = 'Cash basis · data through ' + D.as_of + ' · snapshot ' + D.generated_at.slice(0, 10);
+  var ageDays = (Date.now() - new Date(D.as_of)) / 864e5;
+  if (ageDays > 3) { $('stale').style.display = 'block'; $('stale').textContent = 'Snapshot is ' + Math.floor(ageDays) + ' days old — ask Atlas to refresh it.'; }
+
+  // connector chips
+  (D.connectors || []).forEach(function (c) {
+    var s = document.createElement('span');
+    s.className = 'chip ' + (c.ok ? 'ok' : 'down');
+    s.innerHTML = '<span class="dot"></span>' + c.name + (c.note ? ' — ' + c.note : '');
+    $('chips').appendChild(s);
+  });
+
+  // tiles
+  var M = D.memberships, mtd = D.mtd, dz = D.dunning.zenoti_pending, dsq = D.dunning.square;
+  var pct = mtd.vs_prior_same_window.total ? Math.round((mtd.total / mtd.vs_prior_same_window.total - 1) * 100) : null;
+  var coreMrr = M.core_zenoti_mrr + (M.square_mrr || 0);
+  var totalPaying = M.core_zenoti_paying + (M.square_active_subs || 0);
+  var dunningMo = (dz ? dz.total_due : 0) + (dsq.distinct_customers * 199);
+  var tiles = [
+    { t: 'Cash collected · MTD', v: fmt(mtd.total), d: pct === null ? '' : (pct >= 0 ? '▲ ' : '▼ ') + Math.abs(pct) + '%', dn: pct < 0,
+      s: 'vs ' + fmt(mtd.vs_prior_same_window.total) + ' same window prior month · Zenoti ' + fmtK(mtd.zenoti) + ' + Square ' + fmtK(mtd.square) },
+    { t: 'Membership MRR', v: fmtK(coreMrr + M.nad_plus.mrr),
+      s: 'Core ' + fmtK(coreMrr) + ' (Zenoti ' + fmtK(M.core_zenoti_mrr) + (M.square_mrr ? ' + Square ' + fmtK(M.square_mrr) : '') + ') · NAD+ ' + fmtK(M.nad_plus.mrr) },
+    { t: 'Core paying members', v: totalPaying,
+      s: M.core_zenoti_paying + ' Zenoti' + (M.square_active_subs ? ' + ' + M.square_active_subs + ' Square' : '') + ' · ' + M.new_joins_35d + ' new joins (subset, not added)' },
+    { t: 'MRR in dunning', v: '~' + fmtK(dunningMo) + '/mo', red: true,
+      s: (dz ? dz.overdue + ' Zenoti overdue (' + fmt(dz.overdue_amount) + ')' : 'Zenoti pending n/a') + ' + ' + dsq.distinct_customers + ' Square members failing' }
+  ];
+  tiles.forEach(function (t) {
+    var d = document.createElement('div'); d.className = 'panel';
+    d.innerHTML = '<h2>' + t.t + '</h2><div class="big' + (t.red ? ' red' : '') + '">' + t.v +
+      (t.d ? ' <span class="delta' + (t.dn ? ' neg' : '') + '">' + t.d + '</span>' : '') + '</div><div class="sub">' + t.s + '</div>';
+    $('tiles').appendChild(d);
+  });
+
+  // membership table
+  var C = M.cohorts;
+  var rows = [
+    ['Core @ $199 (Zenoti)', C.rack199, fmt(C.rack199 * 199)],
+    M.square_active_subs ? ['Core @ $199 (Square Monthly T)', M.square_active_subs, fmt(M.square_active_subs * 199)] : null,
+    ['$99 intro <span class="tag plan">3 cycles → $150</span>', C.intro99, fmt(C.intro99 * 99)],
+    ['$150 forever <span class="tag plan">on plan</span>', C.forever150, fmt(C.forever150 * 150)],
+    C.other ? ['Other plan', C.other, '—'] : null,
+    ['NAD+ — always separate', M.nad_plus.members, fmt(M.nad_plus.mrr)],
+    ['Comped (MM Atlas) · F&amp;F', M.comped_mm_atlas + ' · ' + M.friends_family, '—'],
+    ['$0 rows · refund-latest <span class="tag review">review</span>', M.review.zero_amount + ' · ' + M.review.refund_latest, '—']
+  ].filter(Boolean);
+  $('members').innerHTML = '<thead><tr><th>Segment</th><th class="num">Members</th><th class="num">$/mo</th></tr></thead><tbody>' +
+    rows.map(function (r) { return '<tr><td class="name">' + r[0] + '</td><td class="num">' + r[1] + '</td><td class="num">' + r[2] + '</td></tr>'; }).join('') + '</tbody>';
+  $('memnote').textContent = 'Square paused excluded. Active window since ' + M.window_start + '.';
+
+  // attention list (assembled from snapshot state)
+  var items = [];
+  (D.connectors || []).filter(function (c) { return !c.ok; }).forEach(function (c) {
+    items.push(['crit', c.name + ' connector down', c.note || 'Reconnect to restore coverage.']);
+  });
+  if (dz && dz.exhausted > 0) items.push(['crit', dz.exhausted + ' Zenoti memberships out of card retries',
+    fmt(dz.exhausted * 199) + '/mo at risk. Needs card-update outreach; ' + (dz.overdue - dz.exhausted) + ' more still retrying.']);
+  if (dsq.distinct_customers > 0) items.push(['warn', dsq.distinct_customers + ' Square members with failed charges since ' + dsq.since,
+    dsq.failed_attempts + ' failed attempts (' + fmt(dsq.attempted_amount) + ' attempted).']);
+  if (D.reviews && D.reviews.unreplied > 0) items.push(['info', D.reviews.unreplied + ' unreplied Google reviews',
+    D.reviews.unreplied_where || 'Reply to keep response streak.']);
+  if (!items.length) items.push(['info', 'Nothing needs attention', 'All monitored signals are normal.']);
+  $('attn').innerHTML = items.map(function (i) {
+    return '<li class="' + i[0] + '"><span class="sev">' + i[0].toUpperCase().replace('CRIT', 'CRITICAL').replace('WARN', 'WARNING') + '</span>' +
+      '<div><div class="what">' + i[1] + '</div><div class="how">' + i[2] + '</div></div></li>';
+  }).join('');
+
+  // reviews + last full month
+  if (D.reviews && D.reviews.locations) {
+    $('reviews').innerHTML = D.reviews.locations.map(function (l) {
+      return '<div class="rev-row"><div><div style="font-weight:600">' + l.name + '</div><div class="sub" style="margin-top:2px">' +
+        l.count + ' reviews · ' + l.note + '</div></div><div class="stars">★ ' + l.rating.toFixed(1) + '</div></div>';
+    }).join('');
+  }
+  var lastFull = D.trend.filter(function (t) { return !t.partial; }).slice(-1)[0];
+  if (lastFull) {
+    var lm = '<tbody>' +
+      '<tr><td class="name">' + lastFull.m + ' Zenoti collected</td><td class="num">' + fmt(lastFull.amh + lastFull.awg) + '</td></tr>' +
+      '<tr><td class="name">' + lastFull.m + ' Square rail</td><td class="num">' + fmt(lastFull.square) + '</td></tr>' +
+      '<tr><td class="name">Combined</td><td class="num">' + fmt(lastFull.amh + lastFull.awg + lastFull.square) + '</td></tr>';
+    if (D.qbo) {
+      var ent = D.qbo.entity.split('(')[0].trim();
+      lm += '<tr><td class="name">' + D.qbo.month + ' P&amp;L — ' + ent + '</td><td class="num">net ' + fmt(D.qbo.net_income) + '</td></tr>' +
+        '<tr><td class="name" style="font-weight:400;color:var(--muted)">↳ income ' + fmtK(D.qbo.income) + ' · COGS ' + fmtK(D.qbo.cogs_supplies) +
+        ' · payroll ' + fmtK(D.qbo.payroll) + ' · ads ' + fmtK(D.qbo.advertising) + '</td><td class="num"></td></tr>';
+    }
+    $('lastmonth').innerHTML = lm + '</tbody>';
+  }
+  if (D.qbo && D.qbo.lag_note) {
+    var li = document.createElement('li'); li.className = 'info';
+    li.innerHTML = '<span class="sev">INFO</span><div><div class="what">QBO bookkeeping lag — ' + D.qbo.month + ' is the latest closed month</div>' +
+      '<div class="how">' + D.qbo.lag_note + '</div></div>';
+    $('attn').appendChild(li);
+  }
+  $('basis').textContent = 'Basis: ' + D.basis + '. Generated ' + D.generated_at + '.';
+
+  // ---------- trend chart ----------
+  var svg = $('trend'), tip = $('tip'), NS = 'http://www.w3.org/2000/svg';
+  var W = 640, H = 260, padL = 44, padR = 10, padT = 26, padB = 26;
+  var plotW = W - padL - padR, plotH = H - padT - padB;
+  var T = D.trend.slice(-12);
+  var maxV = Math.max.apply(null, T.map(function (t) { return t.amh + t.awg + t.square; })) * 1.12;
+  var css = getComputedStyle(document.documentElement);
+  var v = function (n) { return css.getPropertyValue(n).trim(); };
+  var y = function (val) { return padT + plotH - (val / maxV) * plotH; };
+  var el = function (tag, attrs) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); svg.appendChild(e); return e; };
+  var gridStep = maxV > 150000 ? 50000 : 25000;
+  for (var g = 0; g <= maxV; g += gridStep) {
+    el('line', { x1: padL, x2: W - padR, y1: y(g), y2: y(g), stroke: g === 0 ? v('--border') : 'rgba(31,41,55,0.55)', 'stroke-width': 1 });
+    if (g > 0) el('text', { x: padL - 6, y: y(g) + 4, 'text-anchor': 'end', 'font-size': 10, fill: v('--muted') }).textContent = fmtK(g);
+  }
+  var n = T.length, slot = plotW / n, barW = Math.min(34, slot * 0.62);
+  function seg(x, yTop, h, color, op, rounded) {
+    if (h <= 0.5) return;
+    var r = rounded ? Math.min(4, h, barW / 2) : 0;
+    el('path', { d: 'M' + x + ' ' + (yTop + h) + ' L' + x + ' ' + (yTop + r) + ' Q' + x + ' ' + yTop + ' ' + (x + r) + ' ' + yTop +
+      ' L' + (x + barW - r) + ' ' + yTop + ' Q' + (x + barW) + ' ' + yTop + ' ' + (x + barW) + ' ' + (yTop + r) +
+      ' L' + (x + barW) + ' ' + (yTop + h) + ' Z', fill: color, opacity: op });
+  }
+  var totMax = -1, iMax = 0;
+  T.forEach(function (t, i) { var tot = t.amh + t.awg + t.square; if (tot > totMax && !t.partial) { totMax = tot; iMax = i; } });
+  T.forEach(function (d, i) {
+    var cx = padL + slot * i + slot / 2, x = cx - barW / 2, op = d.partial ? 0.5 : 1;
+    var stack = [[d.amh, v('--s1')], [d.awg, v('--s2')], [d.square, v('--s3')]];
+    var yCur = y(0), total = d.amh + d.awg + d.square;
+    var tops = stack.filter(function (s) { return s[0] > 0; }).length;
+    var drawn = 0;
+    stack.forEach(function (s) {
+      if (s[0] <= 0) return;
+      drawn++;
+      var h = (s[0] / maxV) * plotH;
+      var yTop = yCur - h;
+      seg(x, yTop, h, s[1], op, drawn === tops);
+      yCur = yTop - 2; // 2px gap between stacked segments
+    });
+    if (i === 0 || i === iMax || i === n - 1 || d.partial) {
+      el('text', { x: cx, y: y(total) - 8, 'text-anchor': 'middle', 'font-size': 10.5, 'font-weight': 700, fill: v('--muted') })
+        .textContent = fmtK(total) + (d.partial ? ' MTD' : '');
+    }
+    var lab = d.m.slice(5) === '01' || i === 0 ? d.m : d.m.slice(5);
+    el('text', { x: cx, y: H - 8, 'text-anchor': 'middle', 'font-size': 10, fill: v('--muted'), 'font-weight': d.partial ? 700 : 400 }).textContent = lab;
+    var hit = el('rect', { x: padL + slot * i, y: padT, width: slot, height: plotH, fill: 'transparent' });
+    hit.addEventListener('mousemove', function (ev) {
+      tip.innerHTML = '<div class="t-title">' + d.m + (d.partial ? ' · MTD' : '') + '</div>' +
+        '<div class="row"><span>Men’s Health</span><b>' + fmt(d.amh) + '</b></div>' +
+        '<div class="row"><span>Wellness Group</span><b>' + fmt(d.awg) + '</b></div>' +
+        '<div class="row"><span>Square rail</span><b>' + fmt(d.square) + '</b></div>' +
+        '<div class="row"><span>Total</span><b>' + fmt(total) + '</b></div>';
+      tip.style.display = 'block';
+      tip.style.left = Math.min(ev.clientX + 14, window.innerWidth - tip.offsetWidth - 10) + 'px';
+      tip.style.top = (ev.clientY + 14) + 'px';
+    });
+    hit.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+  });
+})();
+</script>
+</body>
+</html>
