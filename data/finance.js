@@ -1,5 +1,5 @@
 window.FINANCE = {
-  "generated_at": "2026-07-08T19:11:25.561Z",
+  "generated_at": "2026-07-09T06:41:50.593Z",
   "as_of": "2026-07-08",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
@@ -200,14 +200,27 @@ window.FINANCE = {
       "ok": true
     },
     {
-      "name": "QuickBooks — PKNP (LI)",
+      "name": "QuickBooks ×2 — LI entities",
       "ok": true
     },
     {
-      "name": "QBO #2 (LI) & #3 (Midtown)",
+      "name": "QBO #3 (Midtown)",
       "ok": false,
-      "note": "not yet connected"
+      "note": "planned"
     }
-  ]
+  ],
+  "qbo": {
+    "entity": "Long Island combined — PKNP Services + PK NP Family Health",
+    "month": "2026-05",
+    "income": 189761.19,
+    "cogs_supplies": 60041.72,
+    "gross_profit": 129719.47,
+    "total_expenses": 108614.11,
+    "payroll": 39464.06,
+    "advertising": 26247.29,
+    "insurance": 9043.36,
+    "net_income": 21105.36,
+    "lag_note": "CPA has not closed June yet — May is the latest complete month. PKNP May net fell to $16.5K (vs $60-71K Jan-Apr): wages nearly doubled to $35.8K, COGS crept to $55.9K, insurance lump $8.5K. Both LI entities now in qbo_summary."
+  }
 }
 ;
