@@ -1,5 +1,5 @@
 window.FINANCE = {
-  "generated_at": "2026-07-09T06:41:50.593Z",
+  "generated_at": "2026-07-09T06:47:30.160Z",
   "as_of": "2026-07-08",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
@@ -220,7 +220,7 @@ window.FINANCE = {
     "advertising": 26247.29,
     "insurance": 9043.36,
     "net_income": 21105.36,
-    "lag_note": "CPA has not closed June yet — May is the latest complete month. PKNP May net fell to $16.5K (vs $60-71K Jan-Apr): wages nearly doubled to $35.8K, COGS crept to $55.9K, insurance lump $8.5K. Both LI entities now in qbo_summary."
+    "lag_note": "CPA bookkeeping is ~1-2 months behind: June not started, May only ~89% booked (about $23K of May income missing vs cash collected — Feb-Apr track at 97-101%). May figures will improve when closed. Open CPA question: why are May wages $35.8K vs $14-23K prior months? Note: billing is migrating Family Health → PKNP Services; FH decline is the migration, not a business drop."
   }
 }
 ;
