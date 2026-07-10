@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T15:02:07.437Z",
+  "generated_at": "2026-07-10T19:25:50.731Z",
   "as_of": "2026-07-09",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
@@ -163,10 +163,10 @@
     },
     "square": {
       "since": "2026-06-01",
-      "any_failure_customers": 18,
-      "distinct_customers": 6,
-      "attempted_amount": 1145,
-      "recovery_rate_pct": 67
+      "any_failure_customers": 16,
+      "distinct_customers": 4,
+      "attempted_amount": 747,
+      "recovery_rate_pct": 75
     }
   },
   "reviews": {
