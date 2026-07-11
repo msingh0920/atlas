@@ -1,6 +1,6 @@
 window.FINANCE = {
-  "generated_at": "2026-07-10T19:25:50.731Z",
-  "as_of": "2026-07-09",
+  "generated_at": "2026-07-11T10:22:51.522Z",
+  "as_of": "2026-07-11",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
     {
@@ -110,26 +110,26 @@ window.FINANCE = {
     },
     {
       "m": "2026-07",
-      "amh": 49341.6,
-      "awg": 11155.25,
-      "square": 9552,
+      "amh": 55323.85,
+      "awg": 11503.25,
+      "square": 10498,
       "partial": true
     }
   ],
   "mtd": {
     "month": "2026-07",
-    "zenoti": 60496.85,
-    "square": 9353,
-    "total": 69849.85,
+    "zenoti": 66827.1,
+    "square": 10498,
+    "total": 77325.1,
     "vs_prior_same_window": {
-      "zenoti": 63214,
-      "square": 9715,
-      "total": 72929
+      "zenoti": 86155,
+      "square": 12501,
+      "total": 98656
     },
     "redemptions": 2093
   },
   "memberships": {
-    "window_start": "2026-06-04",
+    "window_start": "2026-06-06",
     "core_zenoti_paying": 374,
     "cohorts": {
       "rack199": 367,
@@ -140,33 +140,33 @@ window.FINANCE = {
     "core_zenoti_mrr": 73829,
     "new_joins_35d": 50,
     "nad_plus": {
-      "members": 28,
-      "mrr": 8372
+      "members": 29,
+      "mrr": 8671
     },
     "comped_mm_atlas": 33,
     "friends_family": 1,
     "review": {
       "zero_amount": 3,
-      "refund_latest": 4
+      "refund_latest": 3
     },
     "square_active_subs": 162,
     "square_mrr": 32238
   },
   "dunning": {
     "zenoti_pending": {
-      "pulled_at": "2026-07-10",
-      "count": 14,
-      "total_due": 2886,
-      "overdue": 13,
-      "overdue_amount": 2587,
+      "pulled_at": "2026-07-11",
+      "count": 107,
+      "total_due": 21393,
+      "overdue": 12,
+      "overdue_amount": 2388,
       "exhausted": 12
     },
     "square": {
       "since": "2026-06-01",
       "any_failure_customers": 16,
-      "distinct_customers": 4,
-      "attempted_amount": 747,
-      "recovery_rate_pct": 75
+      "distinct_customers": 3,
+      "attempted_amount": 597,
+      "recovery_rate_pct": 81
     }
   },
   "reviews": {
