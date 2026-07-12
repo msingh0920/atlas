@@ -1,6 +1,6 @@
 window.KPIS = {
-  "generated_at": "2026-07-11T10:22:51.678Z",
-  "as_of": "2026-07-11",
+  "generated_at": "2026-07-12T15:20:13.723Z",
+  "as_of": "2026-07-12",
   "notes": "Consults = completed appointments (Zenoti status 1). New members = distinct setup-fee guests. 2026-05 leads = bulk contact import.",
   "months": [
     {
@@ -186,20 +186,20 @@ window.KPIS = {
     {
       "m": "2026-07",
       "partial": true,
-      "trt": 6,
-      "peptide": 13,
+      "trt": 7,
+      "peptide": 17,
       "weight": 2,
       "mens": 4,
-      "initials_total": 25,
+      "initials_total": 30,
       "initials_telehealth": 8,
-      "appts_completed": 195,
+      "appts_completed": 227,
       "cancel_requests": 1,
       "new_members": 13,
       "members_flag": null,
       "new_nad": 1,
-      "leads": 129,
+      "leads": 146,
       "leads_flag": null,
-      "consult_to_member": 52
+      "consult_to_member": 43
     }
   ]
 }
