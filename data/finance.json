@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-16T10:14:07.715Z",
-  "as_of": "2026-07-15",
+  "generated_at": "2026-07-17T10:14:14.241Z",
+  "as_of": "2026-07-16",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
     {
@@ -110,35 +110,35 @@
     },
     {
       "m": "2026-07",
-      "amh": 96824.35,
-      "awg": 15368.25,
-      "square": 17065,
+      "amh": 100762.35,
+      "awg": 21771.25,
+      "square": 18259,
       "partial": true
     }
   ],
   "mtd": {
     "month": "2026-07",
-    "zenoti": 112192.6,
-    "square": 16866,
-    "total": 129058.6,
+    "zenoti": 122533.6,
+    "square": 17861,
+    "total": 140394.6,
     "vs_prior_same_window": {
-      "zenoti": 105883.1,
-      "square": 19571,
-      "total": 125454.1
+      "zenoti": 110701.6,
+      "square": 20765,
+      "total": 131466.6
     },
-    "redemptions": 3069.33
+    "redemptions": 3665.33
   },
   "memberships": {
-    "window_start": "2026-06-10",
-    "core_zenoti_paying": 380,
+    "window_start": "2026-06-11",
+    "core_zenoti_paying": 384,
     "cohorts": {
-      "rack199": 375,
+      "rack199": 379,
       "forever150": 2,
       "intro99": 3,
       "other": 0
     },
-    "core_zenoti_mrr": 75222,
-    "new_joins_35d": 45,
+    "core_zenoti_mrr": 76018,
+    "new_joins_35d": 50,
     "nad_plus": {
       "members": 32,
       "mrr": 9568
@@ -154,19 +154,19 @@
   },
   "dunning": {
     "zenoti_pending": {
-      "pulled_at": "2026-07-16",
-      "count": 22,
-      "total_due": 4578,
+      "pulled_at": "2026-07-17",
+      "count": 17,
+      "total_due": 3383,
       "overdue": 14,
       "overdue_amount": 2786,
       "exhausted": 8
     },
     "square": {
       "since": "2026-06-01",
-      "any_failure_customers": 18,
-      "distinct_customers": 4,
-      "attempted_amount": 796,
-      "recovery_rate_pct": 78
+      "any_failure_customers": 19,
+      "distinct_customers": 5,
+      "attempted_amount": 995,
+      "recovery_rate_pct": 74
     }
   },
   "reviews": {
