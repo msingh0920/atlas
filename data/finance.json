@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T10:11:50.407Z",
+  "generated_at": "2026-07-23T10:11:41.179Z",
   "as_of": "2026-07-22",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
@@ -110,17 +110,17 @@
     },
     {
       "m": "2026-07",
-      "amh": 131813.45,
-      "awg": 29585.25,
-      "square": 23035,
+      "amh": 134963.45,
+      "awg": 29734.25,
+      "square": 23632,
       "partial": true
     }
   ],
   "mtd": {
     "month": "2026-07",
-    "zenoti": 161398.7,
-    "square": 23035,
-    "total": 184433.7,
+    "zenoti": 164697.7,
+    "square": 23632,
+    "total": 188329.7,
     "vs_prior_same_window": {
       "zenoti": 158425.7,
       "square": 26837,
@@ -154,19 +154,19 @@
   },
   "dunning": {
     "zenoti_pending": {
-      "pulled_at": "2026-07-22",
-      "count": 18,
-      "total_due": 3582,
-      "overdue": 16,
-      "overdue_amount": 3184,
-      "exhausted": 11
+      "pulled_at": "2026-07-23",
+      "count": 15,
+      "total_due": 3085,
+      "overdue": 11,
+      "overdue_amount": 2189,
+      "exhausted": 8
     },
     "square": {
       "since": "2026-06-01",
-      "any_failure_customers": 22,
-      "distinct_customers": 7,
-      "attempted_amount": 1393,
-      "recovery_rate_pct": 68
+      "any_failure_customers": 21,
+      "distinct_customers": 6,
+      "attempted_amount": 1194,
+      "recovery_rate_pct": 71
     }
   },
   "reviews": {
