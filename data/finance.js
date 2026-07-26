@@ -1,6 +1,6 @@
 window.FINANCE = {
-  "generated_at": "2026-07-25T10:10:59.655Z",
-  "as_of": "2026-07-24",
+  "generated_at": "2026-07-26T15:19:14.675Z",
+  "as_of": "2026-07-25",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
     {
@@ -110,38 +110,38 @@ window.FINANCE = {
     },
     {
       "m": "2026-07",
-      "amh": 144603.55,
+      "amh": 148154.55,
       "awg": 31825.25,
-      "square": 25622,
+      "square": 26219,
       "partial": true
     }
   ],
   "mtd": {
     "month": "2026-07",
-    "zenoti": 176428.8,
-    "square": 25224,
-    "total": 201652.8,
+    "zenoti": 179979.8,
+    "square": 26020,
+    "total": 205999.8,
     "vs_prior_same_window": {
-      "zenoti": 168076.7,
-      "square": 28429,
-      "total": 196505.7
+      "zenoti": 175480.8,
+      "square": 29225,
+      "total": 204705.8
     },
-    "redemptions": 6151.33
+    "redemptions": 6300.33
   },
   "memberships": {
-    "window_start": "2026-06-19",
-    "core_zenoti_paying": 383,
+    "window_start": "2026-06-20",
+    "core_zenoti_paying": 386,
     "cohorts": {
-      "rack199": 378,
+      "rack199": 381,
       "forever150": 2,
       "intro99": 3,
       "other": 0
     },
-    "core_zenoti_mrr": 75819,
-    "new_joins_35d": 49,
+    "core_zenoti_mrr": 76416,
+    "new_joins_35d": 50,
     "nad_plus": {
-      "members": 34,
-      "mrr": 10136.1
+      "members": 32,
+      "mrr": 9538.1
     },
     "comped_mm_atlas": 30,
     "friends_family": 1,
@@ -154,11 +154,11 @@ window.FINANCE = {
   },
   "dunning": {
     "zenoti_pending": {
-      "pulled_at": "2026-07-25",
-      "count": 15,
-      "total_due": 3136,
-      "overdue": 10,
-      "overdue_amount": 1990,
+      "pulled_at": "2026-07-26",
+      "count": 12,
+      "total_due": 2588,
+      "overdue": 12,
+      "overdue_amount": 2588,
       "exhausted": 7
     },
     "square": {
