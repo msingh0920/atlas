@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-26T15:19:14.915Z",
+  "generated_at": "2026-07-27T10:10:57.111Z",
   "as_of": "2026-07-26",
   "notes": "Consults = completed appointments (Zenoti status 1). New members = distinct setup-fee guests. 2026-05 leads = bulk contact import.",
   "months": [
@@ -197,7 +197,7 @@
       "new_members": 35,
       "members_flag": null,
       "new_nad": 7,
-      "leads": 371,
+      "leads": 379,
       "leads_flag": null,
       "consult_to_member": 50
     }

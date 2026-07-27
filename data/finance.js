@@ -1,6 +1,6 @@
 window.FINANCE = {
-  "generated_at": "2026-07-26T15:19:14.675Z",
-  "as_of": "2026-07-25",
+  "generated_at": "2026-07-27T10:10:56.903Z",
+  "as_of": "2026-07-26",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
     {
@@ -111,34 +111,34 @@ window.FINANCE = {
     {
       "m": "2026-07",
       "amh": 148154.55,
-      "awg": 31825.25,
-      "square": 26219,
+      "awg": 31920.25,
+      "square": 27015,
       "partial": true
     }
   ],
   "mtd": {
     "month": "2026-07",
-    "zenoti": 179979.8,
-    "square": 26020,
-    "total": 205999.8,
+    "zenoti": 180074.8,
+    "square": 26617,
+    "total": 206691.8,
     "vs_prior_same_window": {
-      "zenoti": 175480.8,
-      "square": 29225,
-      "total": 204705.8
+      "zenoti": 184837.9,
+      "square": 29822,
+      "total": 214659.9
     },
     "redemptions": 6300.33
   },
   "memberships": {
-    "window_start": "2026-06-20",
-    "core_zenoti_paying": 386,
+    "window_start": "2026-06-21",
+    "core_zenoti_paying": 383,
     "cohorts": {
-      "rack199": 381,
+      "rack199": 378,
       "forever150": 2,
       "intro99": 3,
       "other": 0
     },
-    "core_zenoti_mrr": 76416,
-    "new_joins_35d": 50,
+    "core_zenoti_mrr": 75819,
+    "new_joins_35d": 46,
     "nad_plus": {
       "members": 32,
       "mrr": 9538.1
@@ -154,9 +154,9 @@ window.FINANCE = {
   },
   "dunning": {
     "zenoti_pending": {
-      "pulled_at": "2026-07-26",
-      "count": 12,
-      "total_due": 2588,
+      "pulled_at": "2026-07-27",
+      "count": 15,
+      "total_due": 3385,
       "overdue": 12,
       "overdue_amount": 2588,
       "exhausted": 7
@@ -164,9 +164,9 @@ window.FINANCE = {
     "square": {
       "since": "2026-06-01",
       "any_failure_customers": 21,
-      "distinct_customers": 5,
-      "attempted_amount": 995,
-      "recovery_rate_pct": 76
+      "distinct_customers": 6,
+      "attempted_amount": 1194,
+      "recovery_rate_pct": 71
     }
   },
   "reviews": {
