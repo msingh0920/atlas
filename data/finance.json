@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-27T10:10:56.903Z",
-  "as_of": "2026-07-26",
+  "generated_at": "2026-07-28T10:14:43.470Z",
+  "as_of": "2026-07-27",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
     {
@@ -110,34 +110,34 @@
     },
     {
       "m": "2026-07",
-      "amh": 148154.55,
+      "amh": 150703.55,
       "awg": 31920.25,
-      "square": 27015,
+      "square": 27612,
       "partial": true
     }
   ],
   "mtd": {
     "month": "2026-07",
-    "zenoti": 180074.8,
-    "square": 26617,
-    "total": 206691.8,
+    "zenoti": 182623.8,
+    "square": 27413,
+    "total": 210036.8,
     "vs_prior_same_window": {
-      "zenoti": 184837.9,
-      "square": 29822,
-      "total": 214659.9
+      "zenoti": 191934.9,
+      "square": 30618,
+      "total": 222552.9
     },
-    "redemptions": 6300.33
+    "redemptions": 6916
   },
   "memberships": {
-    "window_start": "2026-06-21",
-    "core_zenoti_paying": 383,
+    "window_start": "2026-06-22",
+    "core_zenoti_paying": 370,
     "cohorts": {
-      "rack199": 378,
+      "rack199": 365,
       "forever150": 2,
       "intro99": 3,
       "other": 0
     },
-    "core_zenoti_mrr": 75819,
+    "core_zenoti_mrr": 73232,
     "new_joins_35d": 46,
     "nad_plus": {
       "members": 32,
@@ -146,81 +146,30 @@
     "comped_mm_atlas": 30,
     "friends_family": 1,
     "review": {
-      "zero_amount": 1,
+      "zero_amount": 2,
       "refund_latest": 2
     },
-    "square_active_subs": 162,
-    "square_mrr": 32238
+    "square_active_subs": null,
+    "square_mrr": null
   },
   "dunning": {
     "zenoti_pending": {
-      "pulled_at": "2026-07-27",
-      "count": 15,
-      "total_due": 3385,
-      "overdue": 12,
-      "overdue_amount": 2588,
+      "pulled_at": "2026-07-28",
+      "count": 16,
+      "total_due": 3584,
+      "overdue": 11,
+      "overdue_amount": 2389,
       "exhausted": 7
     },
     "square": {
       "since": "2026-06-01",
       "any_failure_customers": 21,
-      "distinct_customers": 6,
-      "attempted_amount": 1194,
-      "recovery_rate_pct": 71
+      "distinct_customers": 7,
+      "attempted_amount": 1393,
+      "recovery_rate_pct": 67
     }
   },
-  "reviews": {
-    "locations": [
-      {
-        "name": "Long Island",
-        "rating": 5,
-        "count": 348,
-        "note": "all recent replied"
-      },
-      {
-        "name": "Midtown Manhattan",
-        "rating": 5,
-        "count": 63,
-        "note": "3 recent unreplied"
-      }
-    ],
-    "unreplied": 3,
-    "unreplied_where": "Midtown — Jul 2 (×2), Jun 29. Long Island replies to everything."
-  },
-  "connectors": [
-    {
-      "name": "Zenoti warehouse",
-      "ok": true
-    },
-    {
-      "name": "Square",
-      "ok": true
-    },
-    {
-      "name": "Google Reviews",
-      "ok": true
-    },
-    {
-      "name": "QuickBooks ×2 — LI entities",
-      "ok": true
-    },
-    {
-      "name": "QBO #3 (Midtown)",
-      "ok": false,
-      "note": "planned"
-    }
-  ],
-  "qbo": {
-    "entity": "Long Island combined — PKNP Services + PK NP Family Health",
-    "month": "2026-05",
-    "income": 189761.19,
-    "cogs_supplies": 60041.72,
-    "gross_profit": 129719.47,
-    "total_expenses": 108614.11,
-    "payroll": 39464.06,
-    "advertising": 26247.29,
-    "insurance": 9043.36,
-    "net_income": 21105.36,
-    "lag_note": "CPA bookkeeping is ~1-2 months behind: June not started, May only ~89% booked (about $23K of May income missing vs cash collected — Feb-Apr track at 97-101%). May figures will improve when closed. Open CPA question: why are May wages $35.8K vs $14-23K prior months? Note: billing is migrating Family Health → PKNP Services; FH decline is the migration, not a business drop."
-  }
+  "reviews": null,
+  "connectors": null,
+  "qbo": null
 }
