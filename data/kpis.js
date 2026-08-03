@@ -1,6 +1,6 @@
 window.KPIS = {
-  "generated_at": "2026-08-02T10:11:22.583Z",
-  "as_of": "2026-08-01",
+  "generated_at": "2026-08-03T16:31:45.725Z",
+  "as_of": "2026-08-03",
   "notes": "Consults = completed appointments (Zenoti status 1). New members = distinct setup-fee guests. 2026-05 leads = bulk contact import.",
   "months": [
     {
@@ -215,7 +215,7 @@ window.KPIS = {
       "new_members": 1,
       "members_flag": null,
       "new_nad": 0,
-      "leads": 18,
+      "leads": 37,
       "leads_flag": null,
       "consult_to_member": 100
     }
