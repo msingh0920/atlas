@@ -1,5 +1,5 @@
-{
-  "generated_at": "2026-08-06T10:17:48.320Z",
+window.FINANCE = {
+  "generated_at": "2026-08-07T10:21:56.051Z",
   "as_of": "2026-08-05",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
@@ -117,8 +117,8 @@
     },
     {
       "m": "2026-08",
-      "amh": 30467,
-      "awg": 3808,
+      "amh": 34088,
+      "awg": 7172,
       "square": 3831,
       "partial": true
     }
@@ -156,14 +156,14 @@
       "zero_amount": 2,
       "refund_latest": 0
     },
-    "square_active_subs": 162,
-    "square_mrr": 32238
+    "square_active_subs": null,
+    "square_mrr": null
   },
   "dunning": {
     "zenoti_pending": {
-      "pulled_at": "2026-08-06",
-      "count": 14,
-      "total_due": 2786,
+      "pulled_at": "2026-08-07",
+      "count": 13,
+      "total_due": 2587,
       "overdue": 12,
       "overdue_amount": 2388,
       "exhausted": 5
@@ -176,58 +176,7 @@
       "recovery_rate_pct": 81
     }
   },
-  "reviews": {
-    "locations": [
-      {
-        "name": "Long Island",
-        "rating": 5,
-        "count": 348,
-        "note": "all recent replied"
-      },
-      {
-        "name": "Midtown Manhattan",
-        "rating": 5,
-        "count": 63,
-        "note": "3 recent unreplied"
-      }
-    ],
-    "unreplied": 3,
-    "unreplied_where": "Midtown — Jul 2 (×2), Jun 29. Long Island replies to everything."
-  },
-  "connectors": [
-    {
-      "name": "Zenoti warehouse",
-      "ok": true
-    },
-    {
-      "name": "Square",
-      "ok": true
-    },
-    {
-      "name": "Google Reviews",
-      "ok": true
-    },
-    {
-      "name": "QuickBooks ×2 — LI entities",
-      "ok": true
-    },
-    {
-      "name": "QBO #3 (Midtown)",
-      "ok": false,
-      "note": "planned"
-    }
-  ],
-  "qbo": {
-    "entity": "Long Island combined — PKNP Services + PK NP Family Health",
-    "month": "2026-05",
-    "income": 189761.19,
-    "cogs_supplies": 60041.72,
-    "gross_profit": 129719.47,
-    "total_expenses": 108614.11,
-    "payroll": 39464.06,
-    "advertising": 26247.29,
-    "insurance": 9043.36,
-    "net_income": 21105.36,
-    "lag_note": "CPA bookkeeping is ~1-2 months behind: June not started, May only ~89% booked (about $23K of May income missing vs cash collected — Feb-Apr track at 97-101%). May figures will improve when closed. Open CPA question: why are May wages $35.8K vs $14-23K prior months? Note: billing is migrating Family Health → PKNP Services; FH decline is the migration, not a business drop."
-  }
-}
+  "reviews": null,
+  "connectors": null,
+  "qbo": null
+};
