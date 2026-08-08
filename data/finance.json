@@ -1,6 +1,6 @@
 window.FINANCE = {
-  "generated_at": "2026-08-08T10:13:17.851Z",
-  "as_of": "2026-08-05",
+  "generated_at": "2026-08-08T15:08:54.529Z",
+  "as_of": "2026-08-07",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
     {
@@ -119,33 +119,33 @@ window.FINANCE = {
       "m": "2026-08",
       "amh": 36557,
       "awg": 8872.5,
-      "square": 3831,
+      "square": 6020,
       "partial": true
     }
   ],
   "mtd": {
     "month": "2026-08",
-    "zenoti": 34275,
-    "square": 3831,
-    "total": 38106,
+    "zenoti": 45429.5,
+    "square": 5821,
+    "total": 51250.5,
     "vs_prior_same_window": {
-      "zenoti": 36814.1,
-      "square": 4179,
-      "total": 40993.1
+      "zenoti": 52701.1,
+      "square": 6368,
+      "total": 59069.1
     },
-    "redemptions": 1608.5
+    "redemptions": 2324.33
   },
   "memberships": {
-    "window_start": "2026-07-01",
-    "core_zenoti_paying": 382,
+    "window_start": "2026-07-03",
+    "core_zenoti_paying": 367,
     "cohorts": {
-      "rack199": 375,
-      "forever150": 3,
+      "rack199": 361,
+      "forever150": 2,
       "intro99": 3,
       "other": 1
     },
-    "core_zenoti_mrr": 75537.78,
-    "new_joins_35d": 46,
+    "core_zenoti_mrr": 72601.78,
+    "new_joins_35d": 45,
     "nad_plus": {
       "members": 29,
       "mrr": 8641.1
@@ -171,9 +171,9 @@ window.FINANCE = {
     "square": {
       "since": "2026-07-01",
       "any_failure_customers": 16,
-      "distinct_customers": 3,
-      "attempted_amount": 597,
-      "recovery_rate_pct": 81
+      "distinct_customers": 2,
+      "attempted_amount": 398,
+      "recovery_rate_pct": 88
     }
   },
   "reviews": null,
