@@ -1,5 +1,5 @@
 window.FINANCE = {
-  "generated_at": "2026-08-07T10:21:56.051Z",
+  "generated_at": "2026-08-08T10:13:17.851Z",
   "as_of": "2026-08-05",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
@@ -117,8 +117,8 @@ window.FINANCE = {
     },
     {
       "m": "2026-08",
-      "amh": 34088,
-      "awg": 7172,
+      "amh": 36557,
+      "awg": 8872.5,
       "square": 3831,
       "partial": true
     }
@@ -161,12 +161,12 @@ window.FINANCE = {
   },
   "dunning": {
     "zenoti_pending": {
-      "pulled_at": "2026-08-07",
-      "count": 13,
-      "total_due": 2587,
+      "pulled_at": "2026-08-08",
+      "count": 16,
+      "total_due": 3284,
       "overdue": 12,
       "overdue_amount": 2388,
-      "exhausted": 5
+      "exhausted": 10
     },
     "square": {
       "since": "2026-07-01",
