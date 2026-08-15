@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-14T10:18:43.670Z",
-  "as_of": "2026-08-13",
+  "generated_at": "2026-08-15T10:14:29.324Z",
+  "as_of": "2026-08-14",
   "notes": "Consults = completed appointments (Zenoti status 1). New members = distinct setup-fee guests. 2026-05 leads = bulk contact import.",
   "months": [
     {
@@ -204,20 +204,20 @@
     {
       "m": "2026-08",
       "partial": true,
-      "trt": 11,
-      "peptide": 8,
+      "trt": 13,
+      "peptide": 9,
       "weight": 0,
       "mens": 1,
-      "initials_total": 20,
+      "initials_total": 23,
       "initials_telehealth": 1,
-      "appts_completed": 246,
-      "cancel_requests": 3,
-      "new_members": 15,
+      "appts_completed": 275,
+      "cancel_requests": 5,
+      "new_members": 16,
       "members_flag": null,
       "new_nad": 1,
-      "leads": 138,
+      "leads": 150,
       "leads_flag": null,
-      "consult_to_member": 75
+      "consult_to_member": 70
     }
   ]
 }
