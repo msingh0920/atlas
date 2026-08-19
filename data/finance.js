@@ -1,6 +1,6 @@
 window.FINANCE = {
-  "generated_at": "2026-08-18T10:13:24.476Z",
-  "as_of": "2026-08-17",
+  "generated_at": "2026-08-19T10:13:36.933Z",
+  "as_of": "2026-08-18",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
     {
@@ -117,26 +117,26 @@ window.FINANCE = {
     },
     {
       "m": "2026-08",
-      "amh": 86641.62,
-      "awg": 20642.5,
-      "square": 18920,
+      "amh": 89451.62,
+      "awg": 21039.5,
+      "square": 19915,
       "partial": true
     }
   ],
   "mtd": {
     "month": "2026-08",
-    "zenoti": 107284.12,
-    "square": 18721,
-    "total": 126005.12,
+    "zenoti": 110491.12,
+    "square": 19915,
+    "total": 130406.12,
     "vs_prior_same_window": {
-      "zenoti": 132906.7,
-      "square": 18458,
-      "total": 151364.7
+      "zenoti": 135575.7,
+      "square": 20249,
+      "total": 155824.7
     },
-    "redemptions": 5897.16
+    "redemptions": 6629.49
   },
   "memberships": {
-    "window_start": "2026-07-13",
+    "window_start": "2026-07-14",
     "core_zenoti_paying": 375,
     "cohorts": {
       "rack199": 367,
@@ -145,12 +145,12 @@ window.FINANCE = {
       "other": 1
     },
     "core_zenoti_mrr": 73993.78,
-    "new_joins_35d": 49,
+    "new_joins_35d": 48,
     "nad_plus": {
       "members": 30,
       "mrr": 8940.1
     },
-    "comped_mm_atlas": 30,
+    "comped_mm_atlas": 27,
     "friends_family": 1,
     "review": {
       "zero_amount": 2,
@@ -161,19 +161,19 @@ window.FINANCE = {
   },
   "dunning": {
     "zenoti_pending": {
-      "pulled_at": "2026-08-18",
-      "count": 11,
-      "total_due": 2489,
-      "overdue": 8,
-      "overdue_amount": 1792,
-      "exhausted": 6
+      "pulled_at": "2026-08-19",
+      "count": 8,
+      "total_due": 1892,
+      "overdue": 7,
+      "overdue_amount": 1593,
+      "exhausted": 5
     },
     "square": {
       "since": "2026-07-01",
       "any_failure_customers": 17,
-      "distinct_customers": 1,
-      "attempted_amount": 199,
-      "recovery_rate_pct": 94
+      "distinct_customers": 2,
+      "attempted_amount": 398,
+      "recovery_rate_pct": 88
     }
   },
   "reviews": {
@@ -230,5 +230,4 @@ window.FINANCE = {
     "net_income": 21105.36,
     "lag_note": "CPA bookkeeping is ~1-2 months behind: June not started, May only ~89% booked (about $23K of May income missing vs cash collected — Feb-Apr track at 97-101%). May figures will improve when closed. Open CPA question: why are May wages $35.8K vs $14-23K prior months? Note: billing is migrating Family Health → PKNP Services; FH decline is the migration, not a business drop."
   }
-}
-;
+};
