@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-25T10:12:04.437Z",
-  "as_of": "2026-08-24",
+  "generated_at": "2026-08-26T12:19:20.057Z",
+  "as_of": "2026-08-25",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
     {
@@ -117,40 +117,40 @@
     },
     {
       "m": "2026-08",
-      "amh": 125758.22,
-      "awg": 29508.5,
-      "square": 25089,
+      "amh": 130738.72,
+      "awg": 29557.5,
+      "square": 25487,
       "partial": true
     }
   ],
   "mtd": {
     "month": "2026-08",
-    "zenoti": 155266.72,
-    "square": 24691,
-    "total": 179957.72,
+    "zenoti": 160296.22,
+    "square": 25288,
+    "total": 185584.22,
     "vs_prior_same_window": {
-      "zenoti": 176428.8,
-      "square": 25224,
-      "total": 201652.8
+      "zenoti": 179979.8,
+      "square": 26020,
+      "total": 205999.8
     },
-    "redemptions": 7728.82
+    "redemptions": 8312.15
   },
   "memberships": {
-    "window_start": "2026-07-20",
-    "core_zenoti_paying": 382,
+    "window_start": "2026-07-21",
+    "core_zenoti_paying": 383,
     "cohorts": {
-      "rack199": 373,
+      "rack199": 374,
       "forever150": 2,
       "intro99": 6,
       "other": 1
     },
-    "core_zenoti_mrr": 75286.78,
-    "new_joins_35d": 42,
+    "core_zenoti_mrr": 75485.78,
+    "new_joins_35d": 43,
     "nad_plus": {
       "members": 28,
       "mrr": 8372
     },
-    "comped_mm_atlas": 27,
+    "comped_mm_atlas": 26,
     "friends_family": 1,
     "review": {
       "zero_amount": 1,
@@ -161,14 +161,14 @@
   },
   "dunning": {
     "zenoti_pending": {
-      "pulled_at": "2026-08-25",
+      "pulled_at": "2026-08-26",
       "count": 12,
       "total_due": 2388,
-      "overdue": 11,
-      "overdue_amount": 2189,
+      "overdue": 12,
+      "overdue_amount": 2388,
       "exhausted": 3,
-      "scheduled_not_attempted": 3,
-      "scheduled_amount": 548
+      "scheduled_not_attempted": 0,
+      "scheduled_amount": 0
     },
     "square": {
       "since": "2026-07-01",
