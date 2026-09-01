@@ -1,6 +1,6 @@
 window.FINANCE = {
-  "generated_at": "2026-08-31T10:14:15.197Z",
-  "as_of": "2026-08-30",
+  "generated_at": "2026-09-01T10:14:14.683Z",
+  "as_of": "2026-08-31",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
     {
@@ -117,35 +117,42 @@ window.FINANCE = {
     },
     {
       "m": "2026-08",
-      "amh": 144941.72,
-      "awg": 32538.5,
+      "amh": 148465.22,
+      "awg": 34363.5,
       "square": 29418,
       "partial": true
+    },
+    {
+      "m": "2026-09",
+      "amh": 0,
+      "awg": 0,
+      "square": 398,
+      "partial": false
     }
   ],
   "mtd": {
     "month": "2026-08",
-    "zenoti": 177480.22,
+    "zenoti": 182828.72,
     "square": 29418,
-    "total": 206898.22,
+    "total": 212246.72,
     "vs_prior_same_window": {
-      "zenoti": 200837.1,
-      "square": 30548,
-      "total": 231385.1
+      "zenoti": 212023.6,
+      "square": 31145,
+      "total": 243168.6
     },
-    "redemptions": 9299.98
+    "redemptions": 10007.48
   },
   "memberships": {
-    "window_start": "2026-07-26",
-    "core_zenoti_paying": 374,
+    "window_start": "2026-07-27",
+    "core_zenoti_paying": 377,
     "cohorts": {
-      "rack199": 365,
+      "rack199": 368,
       "forever150": 3,
       "intro99": 5,
       "other": 1
     },
-    "core_zenoti_mrr": 73745.78,
-    "new_joins_35d": 39,
+    "core_zenoti_mrr": 74342.78,
+    "new_joins_35d": 42,
     "nad_plus": {
       "members": 28,
       "mrr": 8372
@@ -161,21 +168,21 @@ window.FINANCE = {
   },
   "dunning": {
     "zenoti_pending": {
-      "pulled_at": "2026-08-31",
+      "pulled_at": "2026-09-01",
       "count": 13,
       "total_due": 2687,
-      "overdue": 13,
-      "overdue_amount": 2687,
-      "exhausted": 11,
-      "scheduled_not_attempted": 1,
-      "scheduled_amount": 199
+      "overdue": 12,
+      "overdue_amount": 2488,
+      "exhausted": 10,
+      "scheduled_not_attempted": 104,
+      "scheduled_amount": 20598
     },
     "square": {
       "since": "2026-07-01",
       "any_failure_customers": 21,
-      "distinct_customers": 8,
-      "attempted_amount": 1592,
-      "recovery_rate_pct": 62
+      "distinct_customers": 6,
+      "attempted_amount": 1194,
+      "recovery_rate_pct": 71
     }
   },
   "reviews": {
