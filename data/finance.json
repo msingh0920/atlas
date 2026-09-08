@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-07T00:18:37.281Z",
+  "generated_at": "2026-09-08T10:11:16.715Z",
   "as_of": "2026-09-06",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
@@ -124,7 +124,7 @@
     },
     {
       "m": "2026-09",
-      "amh": 41159.7,
+      "amh": 41308.7,
       "awg": 5633,
       "square": 4627,
       "partial": true
@@ -168,14 +168,14 @@
   },
   "dunning": {
     "zenoti_pending": {
-      "pulled_at": "2026-09-07",
+      "pulled_at": "2026-09-08",
       "count": 19,
       "total_due": 3932,
       "overdue": 19,
       "overdue_amount": 3932,
-      "exhausted": 11,
-      "scheduled_not_attempted": 0,
-      "scheduled_amount": 0
+      "exhausted": 16,
+      "scheduled_not_attempted": 3,
+      "scheduled_amount": 697
     },
     "square": {
       "since": "2026-08-01",
