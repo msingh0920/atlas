@@ -1,6 +1,6 @@
 window.KPIS = {
-  "generated_at": "2026-09-09T10:11:09.328Z",
-  "as_of": "2026-09-08",
+  "generated_at": "2026-09-10T10:10:46.546Z",
+  "as_of": "2026-09-09",
   "notes": "Consults = attended appointments (Zenoti status 1); no_shows = status -2, cancellations = status -1 (both only visible since the 2026-08-18 sync fix — earlier months are backfilled from 2026-01). New members = distinct setup-fee guests. 2026-05 leads = bulk contact import.",
   "months": [
     {
@@ -324,7 +324,7 @@ window.KPIS = {
       "new_members": 8,
       "members_flag": null,
       "new_nad": 1,
-      "leads": 50,
+      "leads": 59,
       "leads_flag": null,
       "consult_to_member": 114
     }

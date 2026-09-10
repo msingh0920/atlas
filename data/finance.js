@@ -1,6 +1,6 @@
 window.FINANCE = {
-  "generated_at": "2026-09-09T10:11:09.121Z",
-  "as_of": "2026-09-08",
+  "generated_at": "2026-09-10T10:10:46.363Z",
+  "as_of": "2026-09-09",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
     {
@@ -124,38 +124,38 @@ window.FINANCE = {
     },
     {
       "m": "2026-09",
-      "amh": 42679.7,
-      "awg": 7712,
-      "square": 7811,
+      "amh": 44585.6,
+      "awg": 8698.5,
+      "square": 8806,
       "partial": true
     }
   ],
   "mtd": {
     "month": "2026-09",
-    "zenoti": 50391.7,
-    "square": 7811,
-    "total": 58202.7,
+    "zenoti": 53284.1,
+    "square": 8607,
+    "total": 61891.1,
     "vs_prior_same_window": {
-      "zenoti": 48274.5,
-      "square": 7811,
-      "total": 56085.5
+      "zenoti": 49319.52,
+      "square": 8607,
+      "total": 57926.52
     },
     "redemptions": 975.16
   },
   "memberships": {
-    "window_start": "2026-08-04",
-    "core_zenoti_paying": 387,
+    "window_start": "2026-08-05",
+    "core_zenoti_paying": 386,
     "cohorts": {
-      "rack199": 378,
+      "rack199": 377,
       "forever150": 3,
       "intro99": 6,
       "other": 0
     },
-    "core_zenoti_mrr": 76266,
+    "core_zenoti_mrr": 76067,
     "new_joins_35d": 39,
     "nad_plus": {
-      "members": 29,
-      "mrr": 8671
+      "members": 30,
+      "mrr": 8970
     },
     "comped_mm_atlas": 26,
     "friends_family": 0,
@@ -168,21 +168,21 @@ window.FINANCE = {
   },
   "dunning": {
     "zenoti_pending": {
-      "pulled_at": "2026-09-09",
-      "count": 18,
-      "total_due": 3633,
-      "overdue": 18,
-      "overdue_amount": 3633,
-      "exhausted": 16,
-      "scheduled_not_attempted": 4,
-      "scheduled_amount": 996
+      "pulled_at": "2026-09-10",
+      "count": 17,
+      "total_due": 3483,
+      "overdue": 16,
+      "overdue_amount": 3284,
+      "exhausted": 15,
+      "scheduled_not_attempted": 3,
+      "scheduled_amount": 797
     },
     "square": {
       "since": "2026-08-01",
       "any_failure_customers": 14,
-      "distinct_customers": 7,
-      "attempted_amount": 1393,
-      "recovery_rate_pct": 50
+      "distinct_customers": 8,
+      "attempted_amount": 1543,
+      "recovery_rate_pct": 43
     }
   },
   "reviews": {
