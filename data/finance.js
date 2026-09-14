@@ -1,6 +1,6 @@
 window.FINANCE = {
-  "generated_at": "2026-09-13T10:09:00.761Z",
-  "as_of": "2026-09-12",
+  "generated_at": "2026-09-14T10:10:19.733Z",
+  "as_of": "2026-09-13",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
     {
@@ -124,26 +124,26 @@ window.FINANCE = {
     },
     {
       "m": "2026-09",
-      "amh": 72097.8,
-      "awg": 11029.5,
-      "square": 11990,
+      "amh": 74892.8,
+      "awg": 11627.5,
+      "square": 12388,
       "partial": true
     }
   ],
   "mtd": {
     "month": "2026-09",
-    "zenoti": 83127.3,
-    "square": 11990,
-    "total": 95117.3,
+    "zenoti": 86520.3,
+    "square": 12388,
+    "total": 98908.3,
     "vs_prior_same_window": {
-      "zenoti": 86352.12,
-      "square": 13149,
-      "total": 99501.12
+      "zenoti": 91278.12,
+      "square": 13746,
+      "total": 105024.12
     },
     "redemptions": 1759.99
   },
   "memberships": {
-    "window_start": "2026-08-08",
+    "window_start": "2026-08-09",
     "core_zenoti_paying": 388,
     "cohorts": {
       "rack199": 379,
@@ -168,21 +168,21 @@ window.FINANCE = {
   },
   "dunning": {
     "zenoti_pending": {
-      "pulled_at": "2026-09-13",
-      "count": 22,
-      "total_due": 4478,
-      "overdue": 22,
-      "overdue_amount": 4478,
+      "pulled_at": "2026-09-14",
+      "count": 20,
+      "total_due": 4080,
+      "overdue": 20,
+      "overdue_amount": 4080,
       "exhausted": 16,
-      "scheduled_not_attempted": 10,
-      "scheduled_amount": 2590
+      "scheduled_not_attempted": 2,
+      "scheduled_amount": 498
     },
     "square": {
       "since": "2026-08-01",
-      "any_failure_customers": 14,
-      "distinct_customers": 7,
-      "attempted_amount": 1344,
-      "recovery_rate_pct": 50
+      "any_failure_customers": 15,
+      "distinct_customers": 8,
+      "attempted_amount": 1543,
+      "recovery_rate_pct": 47
     }
   },
   "reviews": {
