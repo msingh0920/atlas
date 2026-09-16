@@ -1,6 +1,6 @@
 window.FINANCE = {
-  "generated_at": "2026-09-15T10:09:25.795Z",
-  "as_of": "2026-09-14",
+  "generated_at": "2026-09-16T10:12:08.820Z",
+  "as_of": "2026-09-15",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
     {
@@ -124,65 +124,65 @@ window.FINANCE = {
     },
     {
       "m": "2026-09",
-      "amh": 77314.8,
-      "awg": 11925.5,
-      "square": 13383,
+      "amh": 87420.2,
+      "awg": 12479.5,
+      "square": 16923,
       "partial": true
     }
   ],
   "mtd": {
     "month": "2026-09",
-    "zenoti": 89240.3,
-    "square": 13383,
-    "total": 102623.3,
+    "zenoti": 99899.7,
+    "square": 16319,
+    "total": 116218.7,
     "vs_prior_same_window": {
-      "zenoti": 97389.12,
-      "square": 14741,
-      "total": 112130.12
+      "zenoti": 101174.12,
+      "square": 17129,
+      "total": 118303.12
     },
-    "redemptions": 1759.99
+    "redemptions": 3398.82
   },
   "memberships": {
-    "window_start": "2026-08-10",
-    "core_zenoti_paying": 388,
+    "window_start": "2026-08-11",
+    "core_zenoti_paying": 384,
     "cohorts": {
-      "rack199": 379,
+      "rack199": 375,
       "forever150": 3,
       "intro99": 6,
       "other": 0
     },
-    "core_zenoti_mrr": 76465,
-    "new_joins_35d": 36,
+    "core_zenoti_mrr": 75669,
+    "new_joins_35d": 34,
     "nad_plus": {
-      "members": 30,
-      "mrr": 8970
+      "members": 31,
+      "mrr": 9269
     },
     "comped_mm_atlas": 26,
     "friends_family": 0,
     "review": {
       "zero_amount": 1,
-      "refund_latest": 1
+      "refund_latest": 0
     },
     "square_active_subs": 162,
     "square_mrr": 32238
   },
   "dunning": {
     "zenoti_pending": {
-      "pulled_at": "2026-09-15",
-      "count": 20,
-      "total_due": 4180,
-      "overdue": 18,
-      "overdue_amount": 3682,
-      "exhausted": 14,
-      "scheduled_not_attempted": 11,
-      "scheduled_amount": 2089
+      "pulled_at": "2026-09-16",
+      "count": 14,
+      "total_due": 2786,
+      "overdue": 13,
+      "overdue_amount": 2687,
+      "exhausted": 10,
+      "scheduled_not_attempted": 6,
+      "scheduled_amount": 1294
     },
     "square": {
       "since": "2026-08-01",
       "any_failure_customers": 15,
-      "distinct_customers": 8,
-      "attempted_amount": 1543,
-      "recovery_rate_pct": 47
+      "distinct_customers": 6,
+      "attempted_amount": 1194,
+      "recovery_rate_pct": 60
     }
   },
   "reviews": {
