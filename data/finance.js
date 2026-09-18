@@ -1,6 +1,6 @@
 window.FINANCE = {
-  "generated_at": "2026-09-17T10:11:34.788Z",
-  "as_of": "2026-09-16",
+  "generated_at": "2026-09-18T11:25:12.249Z",
+  "as_of": "2026-09-18",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
     {
@@ -124,40 +124,40 @@ window.FINANCE = {
     },
     {
       "m": "2026-09",
-      "amh": 93003.2,
-      "awg": 13534.5,
-      "square": 17918,
+      "amh": 97869.2,
+      "awg": 15454.5,
+      "square": 18117,
       "partial": true
     }
   ],
   "mtd": {
     "month": "2026-09",
-    "zenoti": 106537.7,
-    "square": 17719,
-    "total": 124256.7,
+    "zenoti": 113323.7,
+    "square": 18117,
+    "total": 131440.7,
     "vs_prior_same_window": {
-      "zenoti": 102468.12,
-      "square": 18323,
-      "total": 120791.12
+      "zenoti": 110491.12,
+      "square": 19915,
+      "total": 130406.12
     },
-    "redemptions": 3398.82
+    "redemptions": 4330.15
   },
   "memberships": {
-    "window_start": "2026-08-12",
-    "core_zenoti_paying": 370,
+    "window_start": "2026-08-14",
+    "core_zenoti_paying": 371,
     "cohorts": {
-      "rack199": 361,
+      "rack199": 362,
       "forever150": 3,
       "intro99": 6,
       "other": 0
     },
-    "core_zenoti_mrr": 72883,
-    "new_joins_35d": 30,
+    "core_zenoti_mrr": 73082,
+    "new_joins_35d": 31,
     "nad_plus": {
       "members": 31,
       "mrr": 9269
     },
-    "comped_mm_atlas": 26,
+    "comped_mm_atlas": 24,
     "friends_family": 0,
     "review": {
       "zero_amount": 1,
@@ -168,14 +168,14 @@ window.FINANCE = {
   },
   "dunning": {
     "zenoti_pending": {
-      "pulled_at": "2026-09-17",
+      "pulled_at": "2026-09-18",
       "count": 14,
       "total_due": 2786,
       "overdue": 14,
       "overdue_amount": 2786,
       "exhausted": 11,
-      "scheduled_not_attempted": 6,
-      "scheduled_amount": 1294
+      "scheduled_not_attempted": 3,
+      "scheduled_amount": 697
     },
     "square": {
       "since": "2026-08-01",
