@@ -1,5 +1,5 @@
 window.FINANCE = {
-  "generated_at": "2026-09-21T12:45:45.758Z",
+  "generated_at": "2026-09-21T12:48:11.264Z",
   "as_of": "2026-09-21",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
@@ -124,17 +124,17 @@ window.FINANCE = {
     },
     {
       "m": "2026-09",
-      "amh": 105261.2,
-      "awg": 18186.5,
+      "amh": 120087.2,
+      "awg": 21171.5,
       "square": 20903,
       "partial": true
     }
   ],
   "mtd": {
     "month": "2026-09",
-    "zenoti": 123447.7,
+    "zenoti": 141258.7,
     "square": 20903,
-    "total": 144350.7,
+    "total": 162161.7,
     "vs_prior_same_window": {
       "zenoti": 145642.72,
       "square": 22900,
@@ -169,13 +169,16 @@ window.FINANCE = {
   "dunning": {
     "zenoti_pending": {
       "pulled_at": "2026-09-21",
-      "count": 85,
-      "total_due": 16866,
+      "count": 12,
+      "total_due": 2388,
       "overdue": 12,
       "overdue_amount": 2388,
       "exhausted": 10,
       "scheduled_not_attempted": 26,
-      "scheduled_amount": 5274
+      "scheduled_amount": 5274,
+      "in_flight_today": 99,
+      "in_flight_amount": 19752,
+      "in_flight_tried_once": 73
     },
     "square": {
       "since": "2026-08-01",
