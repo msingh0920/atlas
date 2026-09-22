@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-21T12:48:11.264Z",
-  "as_of": "2026-09-21",
+  "generated_at": "2026-09-22T12:57:26.360Z",
+  "as_of": "2026-09-22",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
     {
@@ -124,38 +124,38 @@
     },
     {
       "m": "2026-09",
-      "amh": 120087.2,
-      "awg": 21171.5,
-      "square": 20903,
+      "amh": 128935.2,
+      "awg": 21938.5,
+      "square": 22495,
       "partial": true
     }
   ],
   "mtd": {
     "month": "2026-09",
-    "zenoti": 141258.7,
-    "square": 20903,
-    "total": 162161.7,
+    "zenoti": 150873.7,
+    "square": 22495,
+    "total": 173368.7,
     "vs_prior_same_window": {
-      "zenoti": 145642.72,
-      "square": 22900,
-      "total": 168542.72
+      "zenoti": 149344.72,
+      "square": 23497,
+      "total": 172841.72
     },
-    "redemptions": 4723.15
+    "redemptions": 4872.15
   },
   "memberships": {
-    "window_start": "2026-08-17",
-    "core_zenoti_paying": 375,
+    "window_start": "2026-08-18",
+    "core_zenoti_paying": 370,
     "cohorts": {
-      "rack199": 367,
+      "rack199": 362,
       "forever150": 3,
       "intro99": 5,
       "other": 0
     },
-    "core_zenoti_mrr": 73978,
-    "new_joins_35d": 35,
+    "core_zenoti_mrr": 72983,
+    "new_joins_35d": 34,
     "nad_plus": {
-      "members": 31,
-      "mrr": 9269
+      "members": 30,
+      "mrr": 8970
     },
     "comped_mm_atlas": 24,
     "friends_family": 0,
@@ -168,17 +168,17 @@
   },
   "dunning": {
     "zenoti_pending": {
-      "pulled_at": "2026-09-21",
-      "count": 12,
-      "total_due": 2388,
-      "overdue": 12,
-      "overdue_amount": 2388,
+      "pulled_at": "2026-09-22",
+      "count": 19,
+      "total_due": 3732,
+      "overdue": 19,
+      "overdue_amount": 3732,
       "exhausted": 10,
-      "scheduled_not_attempted": 26,
-      "scheduled_amount": 5274,
-      "in_flight_today": 99,
-      "in_flight_amount": 19752,
-      "in_flight_tried_once": 73
+      "scheduled_not_attempted": 0,
+      "scheduled_amount": 0,
+      "in_flight_today": 0,
+      "in_flight_amount": 0,
+      "in_flight_tried_once": 0
     },
     "square": {
       "since": "2026-08-01",
