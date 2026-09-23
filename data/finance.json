@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T12:57:26.360Z",
+  "generated_at": "2026-09-23T12:53:10.285Z",
   "as_of": "2026-09-22",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
@@ -124,17 +124,17 @@
     },
     {
       "m": "2026-09",
-      "amh": 128935.2,
-      "awg": 21938.5,
-      "square": 22495,
+      "amh": 135800.2,
+      "awg": 22087.5,
+      "square": 22694,
       "partial": true
     }
   ],
   "mtd": {
     "month": "2026-09",
-    "zenoti": 150873.7,
-    "square": 22495,
-    "total": 173368.7,
+    "zenoti": 156543.7,
+    "square": 22694,
+    "total": 179237.7,
     "vs_prior_same_window": {
       "zenoti": 149344.72,
       "square": 23497,
@@ -144,15 +144,15 @@
   },
   "memberships": {
     "window_start": "2026-08-18",
-    "core_zenoti_paying": 370,
+    "core_zenoti_paying": 371,
     "cohorts": {
-      "rack199": 362,
+      "rack199": 363,
       "forever150": 3,
       "intro99": 5,
       "other": 0
     },
-    "core_zenoti_mrr": 72983,
-    "new_joins_35d": 34,
+    "core_zenoti_mrr": 73182,
+    "new_joins_35d": 35,
     "nad_plus": {
       "members": 30,
       "mrr": 8970
@@ -168,12 +168,12 @@
   },
   "dunning": {
     "zenoti_pending": {
-      "pulled_at": "2026-09-22",
-      "count": 19,
-      "total_due": 3732,
-      "overdue": 19,
-      "overdue_amount": 3732,
-      "exhausted": 10,
+      "pulled_at": "2026-09-23",
+      "count": 20,
+      "total_due": 3931,
+      "overdue": 20,
+      "overdue_amount": 3931,
+      "exhausted": 11,
       "scheduled_not_attempted": 0,
       "scheduled_amount": 0,
       "in_flight_today": 0,
@@ -182,10 +182,10 @@
     },
     "square": {
       "since": "2026-08-01",
-      "any_failure_customers": 17,
-      "distinct_customers": 6,
-      "attempted_amount": 1194,
-      "recovery_rate_pct": 65
+      "any_failure_customers": 18,
+      "distinct_customers": 7,
+      "attempted_amount": 1393,
+      "recovery_rate_pct": 61
     }
   },
   "reviews": {
