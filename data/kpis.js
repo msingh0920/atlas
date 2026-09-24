@@ -1,6 +1,6 @@
 window.KPIS = {
-  "generated_at": "2026-09-23T12:53:10.585Z",
-  "as_of": "2026-09-23",
+  "generated_at": "2026-09-24T12:31:49.297Z",
+  "as_of": "2026-09-24",
   "notes": "Consults = attended appointments (Zenoti status 1); no_shows = status -2, cancellations = status -1 (both only visible since the 2026-08-18 sync fix — earlier months are backfilled from 2026-01). New members = distinct setup-fee guests. 2026-05 leads = bulk contact import.",
   "months": [
     {
@@ -315,7 +315,7 @@ window.KPIS = {
       "initials_no_show": 6,
       "initials_cancelled": 10,
       "initials_no_show_rate": 15,
-      "appts_completed": 380,
+      "appts_completed": 382,
       "no_shows": 26,
       "cancellations": 59,
       "no_show_rate": 6,
@@ -324,7 +324,7 @@ window.KPIS = {
       "new_members": 20,
       "members_flag": null,
       "new_nad": 2,
-      "leads": 156,
+      "leads": 166,
       "leads_flag": null,
       "consult_to_member": 59
     }
