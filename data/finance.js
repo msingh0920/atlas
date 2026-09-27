@@ -1,6 +1,6 @@
 window.FINANCE = {
-  "generated_at": "2026-09-26T15:34:45.759Z",
-  "as_of": "2026-09-25",
+  "generated_at": "2026-09-27T14:02:33.110Z",
+  "as_of": "2026-09-27",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
     {
@@ -124,38 +124,38 @@ window.FINANCE = {
     },
     {
       "m": "2026-09",
-      "amh": 144828.4,
+      "amh": 146375.4,
       "awg": 30766.5,
-      "square": 24883,
+      "square": 25878,
       "partial": true
     }
   ],
   "mtd": {
     "month": "2026-09",
-    "zenoti": 175594.9,
-    "square": 24684,
-    "total": 200278.9,
+    "zenoti": 177141.9,
+    "square": 25878,
+    "total": 203019.9,
     "vs_prior_same_window": {
-      "zenoti": 160296.22,
-      "square": 25288,
-      "total": 185584.22
+      "zenoti": 165961.22,
+      "square": 26880,
+      "total": 192841.22
     },
     "redemptions": 6141.15
   },
   "memberships": {
-    "window_start": "2026-08-21",
-    "core_zenoti_paying": 373,
+    "window_start": "2026-08-23",
+    "core_zenoti_paying": 332,
     "cohorts": {
-      "rack199": 365,
+      "rack199": 325,
       "forever150": 3,
-      "intro99": 5,
+      "intro99": 4,
       "other": 0
     },
-    "core_zenoti_mrr": 73580,
-    "new_joins_35d": 35,
+    "core_zenoti_mrr": 65521,
+    "new_joins_35d": 32,
     "nad_plus": {
-      "members": 31,
-      "mrr": 9269
+      "members": 30,
+      "mrr": 8970
     },
     "comped_mm_atlas": 24,
     "friends_family": 0,
@@ -168,12 +168,12 @@ window.FINANCE = {
   },
   "dunning": {
     "zenoti_pending": {
-      "pulled_at": "2026-09-26",
-      "count": 15,
-      "total_due": 2985,
-      "overdue": 15,
-      "overdue_amount": 2985,
-      "exhausted": 11,
+      "pulled_at": "2026-09-27",
+      "count": 12,
+      "total_due": 2388,
+      "overdue": 12,
+      "overdue_amount": 2388,
+      "exhausted": 8,
       "scheduled_not_attempted": 0,
       "scheduled_amount": 0,
       "in_flight_today": 0,
@@ -182,10 +182,10 @@ window.FINANCE = {
     },
     "square": {
       "since": "2026-08-01",
-      "any_failure_customers": 20,
-      "distinct_customers": 7,
-      "attempted_amount": 1393,
-      "recovery_rate_pct": 65
+      "any_failure_customers": 21,
+      "distinct_customers": 8,
+      "attempted_amount": 1592,
+      "recovery_rate_pct": 62
     }
   },
   "reviews": {
