@@ -1,5 +1,5 @@
 window.FINANCE = {
-  "generated_at": "2026-09-28T12:37:56.034Z",
+  "generated_at": "2026-09-29T13:44:48.723Z",
   "as_of": "2026-09-28",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
@@ -124,17 +124,17 @@ window.FINANCE = {
     },
     {
       "m": "2026-09",
-      "amh": 147281.4,
-      "awg": 30965.5,
-      "square": 26674,
+      "amh": 151614.4,
+      "awg": 31313.5,
+      "square": 27620,
       "partial": true
     }
   ],
   "mtd": {
     "month": "2026-09",
-    "zenoti": 178246.9,
-    "square": 26674,
-    "total": 204920.9,
+    "zenoti": 182927.9,
+    "square": 27421,
+    "total": 210348.9,
     "vs_prior_same_window": {
       "zenoti": 171398.22,
       "square": 27627,
@@ -144,15 +144,15 @@ window.FINANCE = {
   },
   "memberships": {
     "window_start": "2026-08-24",
-    "core_zenoti_paying": 332,
+    "core_zenoti_paying": 334,
     "cohorts": {
-      "rack199": 325,
+      "rack199": 327,
       "forever150": 3,
       "intro99": 4,
       "other": 0
     },
-    "core_zenoti_mrr": 65521,
-    "new_joins_35d": 32,
+    "core_zenoti_mrr": 65919,
+    "new_joins_35d": 34,
     "nad_plus": {
       "members": 30,
       "mrr": 8970
@@ -168,24 +168,24 @@ window.FINANCE = {
   },
   "dunning": {
     "zenoti_pending": {
-      "pulled_at": "2026-09-28",
-      "count": 12,
-      "total_due": 2388,
-      "overdue": 12,
-      "overdue_amount": 2388,
-      "exhausted": 12,
-      "scheduled_not_attempted": 0,
-      "scheduled_amount": 0,
-      "in_flight_today": 0,
-      "in_flight_amount": 0,
+      "pulled_at": "2026-09-29",
+      "count": 9,
+      "total_due": 1691,
+      "overdue": 9,
+      "overdue_amount": 1691,
+      "exhausted": 9,
+      "scheduled_not_attempted": 4,
+      "scheduled_amount": 796,
+      "in_flight_today": 4,
+      "in_flight_amount": 796,
       "in_flight_tried_once": 0
     },
     "square": {
       "since": "2026-08-01",
       "any_failure_customers": 21,
-      "distinct_customers": 6,
-      "attempted_amount": 1194,
-      "recovery_rate_pct": 71
+      "distinct_customers": 5,
+      "attempted_amount": 995,
+      "recovery_rate_pct": 76
     }
   },
   "reviews": {
