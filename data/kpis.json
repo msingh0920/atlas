@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-30T13:01:27.208Z",
-  "as_of": "2026-09-29",
+  "generated_at": "2026-10-01T12:01:38.349Z",
+  "as_of": "2026-09-30",
   "notes": "Consults = attended appointments (Zenoti status 1); no_shows = status -2, cancellations = status -1 (both only visible since the 2026-08-18 sync fix — earlier months are backfilled from 2026-01). New members = distinct setup-fee guests. 2026-05 leads = bulk contact import.",
   "months": [
     {
@@ -315,7 +315,7 @@
       "initials_no_show": 7,
       "initials_cancelled": 10,
       "initials_no_show_rate": 13,
-      "appts_completed": 504,
+      "appts_completed": 510,
       "no_shows": 31,
       "cancellations": 91,
       "no_show_rate": 6,
@@ -324,7 +324,7 @@
       "new_members": 27,
       "members_flag": null,
       "new_nad": 3,
-      "leads": 211,
+      "leads": 217,
       "leads_flag": null,
       "consult_to_member": 56
     }
