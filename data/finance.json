@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-01T12:01:38.083Z",
-  "as_of": "2026-09-30",
+  "generated_at": "2026-10-02T12:18:53.363Z",
+  "as_of": "2026-10-01",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
     {
@@ -127,31 +127,38 @@
       "amh": 156630.4,
       "awg": 31599,
       "square": 29411,
+      "partial": false
+    },
+    {
+      "m": "2026-10",
+      "amh": 19048,
+      "awg": 5132,
+      "square": 796,
       "partial": true
     }
   ],
   "mtd": {
-    "month": "2026-09",
-    "zenoti": 188229.4,
-    "square": 29411,
-    "total": 217640.4,
+    "month": "2026-10",
+    "zenoti": 24180,
+    "square": 597,
+    "total": 24777,
     "vs_prior_same_window": {
-      "zenoti": 177480.22,
-      "square": 29418,
-      "total": 206898.22
+      "zenoti": 24876.1,
+      "square": 1194,
+      "total": 26070.1
     },
-    "redemptions": 6141.15
+    "redemptions": 298
   },
   "memberships": {
-    "window_start": "2026-08-26",
-    "core_zenoti_paying": 334,
+    "window_start": "2026-08-27",
+    "core_zenoti_paying": 339,
     "cohorts": {
-      "rack199": 327,
+      "rack199": 332,
       "forever150": 3,
       "intro99": 4,
       "other": 0
     },
-    "core_zenoti_mrr": 65919,
+    "core_zenoti_mrr": 66914,
     "new_joins_35d": 34,
     "nad_plus": {
       "members": 30,
@@ -168,24 +175,24 @@
   },
   "dunning": {
     "zenoti_pending": {
-      "pulled_at": "2026-10-01",
-      "count": 9,
-      "total_due": 1691,
-      "overdue": 9,
-      "overdue_amount": 1691,
+      "pulled_at": "2026-10-02",
+      "count": 10,
+      "total_due": 1890,
+      "overdue": 10,
+      "overdue_amount": 1890,
       "exhausted": 8,
-      "scheduled_not_attempted": 112,
-      "scheduled_amount": 22239,
-      "in_flight_today": 113,
-      "in_flight_amount": 22438,
-      "in_flight_tried_once": 1
+      "scheduled_not_attempted": 4,
+      "scheduled_amount": 796,
+      "in_flight_today": 12,
+      "in_flight_amount": 2388,
+      "in_flight_tried_once": 8
     },
     "square": {
-      "since": "2026-08-01",
-      "any_failure_customers": 21,
+      "since": "2026-09-01",
+      "any_failure_customers": 19,
       "distinct_customers": 6,
       "attempted_amount": 1194,
-      "recovery_rate_pct": 71
+      "recovery_rate_pct": 68
     }
   },
   "reviews": {
