@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-02T12:18:53.363Z",
-  "as_of": "2026-10-01",
+  "generated_at": "2026-10-03T13:17:26.395Z",
+  "as_of": "2026-10-02",
   "basis": "cash collected; Zenoti excl. redemptions & Square tender; Square from square_payments",
   "trend": [
     {
@@ -131,26 +131,26 @@
     },
     {
       "m": "2026-10",
-      "amh": 19048,
-      "awg": 5132,
-      "square": 796,
+      "amh": 23912,
+      "awg": 5361,
+      "square": 1194,
       "partial": true
     }
   ],
   "mtd": {
     "month": "2026-10",
-    "zenoti": 24180,
-    "square": 597,
-    "total": 24777,
+    "zenoti": 29273,
+    "square": 1194,
+    "total": 30467,
     "vs_prior_same_window": {
-      "zenoti": 24876.1,
-      "square": 1194,
-      "total": 26070.1
+      "zenoti": 26847.1,
+      "square": 1990,
+      "total": 28837.1
     },
-    "redemptions": 298
+    "redemptions": 887
   },
   "memberships": {
-    "window_start": "2026-08-27",
+    "window_start": "2026-08-28",
     "core_zenoti_paying": 339,
     "cohorts": {
       "rack199": 332,
@@ -159,7 +159,7 @@
       "other": 0
     },
     "core_zenoti_mrr": 66914,
-    "new_joins_35d": 34,
+    "new_joins_35d": 35,
     "nad_plus": {
       "members": 30,
       "mrr": 8970
@@ -175,17 +175,17 @@
   },
   "dunning": {
     "zenoti_pending": {
-      "pulled_at": "2026-10-02",
-      "count": 10,
-      "total_due": 1890,
-      "overdue": 10,
-      "overdue_amount": 1890,
-      "exhausted": 8,
-      "scheduled_not_attempted": 4,
-      "scheduled_amount": 796,
-      "in_flight_today": 12,
-      "in_flight_amount": 2388,
-      "in_flight_tried_once": 8
+      "pulled_at": "2026-10-03",
+      "count": 11,
+      "total_due": 2089,
+      "overdue": 11,
+      "overdue_amount": 2089,
+      "exhausted": 6,
+      "scheduled_not_attempted": 0,
+      "scheduled_amount": 0,
+      "in_flight_today": 0,
+      "in_flight_amount": 0,
+      "in_flight_tried_once": 0
     },
     "square": {
       "since": "2026-09-01",
